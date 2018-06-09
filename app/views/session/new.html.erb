@@ -3,6 +3,7 @@
   <%= link_to pages_path %>
 
 <% else %>
+  <div id="login_form">
   <%= form_tag login_path do %>
     <strong> <%= flash[:error] %></strong>
     <br>
@@ -16,4 +17,6 @@
     <br>
     <%= submit_tag 'Login'%>
   <% end %>
+</div>
+
 <% end %>

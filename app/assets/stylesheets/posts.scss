@@ -5,13 +5,24 @@ img{
   height: 250px;
   width: 250px;
 }
+
 .posts_individual{
   overflow: auto;
   display: inline-block;
   max-width: 290px;
   margin: 5px;
+  
+
 }
 #posts_div:hover{
   opacity: 0.6;
   border: 2px solid black;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: none;
 }

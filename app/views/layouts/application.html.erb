@@ -8,18 +8,46 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= cloudinary_js_config %>
+
+
   </head>
 
   <body>
-    <nav>
-        <% if @current_user.present?%>
-          Welcome, <%= @current_user.username%>
-          |
-        <%= link_to 'Logout', login_path, method: :delete%>
-        <% else %>
-          <%= link_to 'login', login_path%>
-        <% end %>
-      </nav>
+
+
+    <div id="wrapper">
+
+      <input type="checkbox" id="menu" name="menu" class="menu-checkbox">
+      <div class="menu">
+        <label class="menu-toggle" for="menu"><span>Toggle</span></label>
+        <ul>
+          <li class="sidebar">
+          <% if @current_user.present?%>
+              <%= link_to "Welcome " + @current_user.username, user_path(@current_user.id)%>
+              <% else %>
+              <%= link_to 'Login', login_path%>
+          <% end %>
+          </li>
+          <li class="sidebar">
+              <%= link_to 'Cities', cities_path%>
+          </li>
+          <li class="sidebar">
+              <%= link_to 'Blog Posts', posts_path%>
+          </li>
+          <% if @current_user.present?%>
+          <li class="sidebar">
+              <%= link_to 'Logout', login_path, method: :delete%>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+
+
+
+</div>
+
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,12 @@
+<h1>Beautiful Cities of the World</h1>
+<ul>
+  <% @cities.each do |city| %>
+    <li>
+
+      <strong><%= link_to city.name, city_path(city) %></strong><br>
+      Description:
+      <%= city.bio %><br>
+      <%= image_tag city.image %>
+    </li>
+  <% end %>
+</ul>

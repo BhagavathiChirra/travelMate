@@ -14,12 +14,20 @@
  *= require_self
  */
 
+ img {
+   max-width: 300px;
 
-img {
-  max-width: 300px;
+ }
 
+ li {
+   list-style: none;
+
+body{
+  width: 900px;
+  text-align: center;
 }
-
-li {
-  list-style: none;
+.field{
+  margin: 10px;
+  height: 25px;
+  width: 200px;
 }

@@ -1,0 +1,17 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+img{
+  height: 250px;
+  width: 250px;
+}
+.posts_individual{
+  overflow: auto;
+  display: inline-block;
+  max-width: 290px;
+  margin: 5px;
+}
+#posts_div:hover{
+  opacity: 0.6;
+  border: 2px solid black;
+}

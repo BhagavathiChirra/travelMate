@@ -3,8 +3,8 @@
   <%= link_to pages_path %>
 
 <% else %>
-  <div id="login_form">
-  <%= form_tag login_path do %>
+  <div id="login_div">
+  <%= form_tag login_path, :id => 'login_form' do %>
     <strong> <%= flash[:error] %></strong>
     <br>
     <%= label_tag :email %>

@@ -13,41 +13,39 @@
   </head>
 
   <body>
+    <div class="wrapper">
 
+        <span class="menu"></span>
 
-    <div id="wrapper">
+        <div class="overlay">
+            <ul>
+              <li>
+              <% if @current_user.present?%>
+                  <%= link_to "Welcome " + @current_user.username, user_path(@current_user.id)%>
+                  <% else %>
+                  <%= link_to 'Login', login_path%>
+              <% end %>
+              </li>
+              <li>
+                  <%= link_to 'Cities', cities_path%>
+              </li>
+              <li>
+                  <%= link_to 'Blog Posts', posts_path%>
+              </li>
+              <% if @current_user.present?%>
+              <li>
+                  <%= link_to 'Logout', login_path, method: :delete%>
+              </li>
+              <% end %>
+            </ul>
+        </div>
 
-      <input type="checkbox" id="menu" name="menu" class="menu-checkbox">
-      <div class="menu">
-        <label class="menu-toggle" for="menu"><span>Toggle</span></label>
-        <ul>
-          <li class="sidebar">
-          <% if @current_user.present?%>
-              <%= link_to "Welcome " + @current_user.username, user_path(@current_user.id)%>
-              <% else %>
-              <%= link_to 'Login', login_path%>
-          <% end %>
-          </li>
-          <li class="sidebar">
-              <%= link_to 'Cities', cities_path%>
-          </li>
-          <li class="sidebar">
-              <%= link_to 'Blog Posts', posts_path%>
-          </li>
-          <% if @current_user.present?%>
-          <li class="sidebar">
-              <%= link_to 'Logout', login_path, method: :delete%>
-          </li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-
-
-
-
-</div>
-
+        <div class="footer">Project 2 for WDI 27. By Anna Tran & Bhagavathi Chirra.
+        </div>
+  </div>
+  <div id="content_body">
     <%= yield %>
-  </body>
+  </div>
+
+</body>
 </html>

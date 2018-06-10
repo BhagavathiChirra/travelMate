@@ -1,4 +1,4 @@
-
+<div id="content_body">
 <%= form_for(@post, :html => {:multipart => true}) do |f| %>
   <%= f.label :title, 'Title :'%>
   <%= f.text_field :title, class: :field%>
@@ -11,3 +11,4 @@
   <br>
   <%= f.submit%>
 <% end %>
+</div>

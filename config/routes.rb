@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   root to: "pages#home"
     get "/login" => "session#new"
     post "/login" => "session#create"
@@ -13,4 +14,5 @@ Rails.application.routes.draw do
   resources :cities
   resources :posts
   resources :users
+  resources :photos
 end

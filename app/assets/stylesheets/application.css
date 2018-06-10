@@ -26,7 +26,16 @@
   transform: scale(1.2);
 }
 
-#city_body {
+#content_body {
+  /* 100 - 240 menu - 20px - 60px menu */
+  /* padding +20 on each side) */
+  width: calc(100% - 320px);
+  padding-right: 20px;
+  text-align: center;
+  position: absolute;
+  right: 0px;
+  z-index: 1;
+  /* background-color: rgba(250, 250, 250, 0.2); */
 
 }
 

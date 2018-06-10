@@ -11,12 +11,10 @@ img{
   display: inline-block;
   max-width: 290px;
   margin: 5px;
-  
-
 }
+
 #posts_div:hover{
   opacity: 0.6;
-  border: 2px solid black;
 }
 
 li {
@@ -25,4 +23,6 @@ li {
 
 a {
   color: none;
+  font-size: 24px;
+  vertical-align: middle;
 }

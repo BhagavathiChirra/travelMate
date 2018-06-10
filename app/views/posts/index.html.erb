@@ -1,13 +1,9 @@
-<h1>All Posts</h1>
-<div>
+<div id="content_body">
+  <h2>All Posts</h2>
   <% @posts.each do |p| %>
-    <%= link_to post_path(p) do %>
-      <div class="posts_individual" id="posts_div">
-        <%= cl_image_tag p.image %>
-        <br>
-        <span><strong><%= p.title %></strong><span>
-        <br>
-      </div>
-    <% end %>
+    <div class="posts_individual" id="posts_div">
+      <strong><%= link_to p.title, post_path(p) %></strong><br>
+      <%= cl_image_tag p.image %>
+    </div>
   <% end %>
 </div>

@@ -19,6 +19,7 @@
 $(document).ready(function () {
   $('span').click(function() {
       $('.overlay').toggleClass('anim');
+      $('.content_body').toggleClass('small_content');
   });
 
   $('.animation').click(function(){

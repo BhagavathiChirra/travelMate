@@ -1,7 +1,7 @@
   <h1><%= @post.title%></h1>
   <% if @is_admin %>
-  <%= link_to "Edit", edit_post_path(@post)%>
-  <%= link_to "Delete", post_path(@post), method: :delete%>
+  <%= link_to "Edit", edit_post_path(@post), class: "edit_link"%>
+  <%= link_to "Delete", post_path(@post), class: "edit_link", method: :delete%>
   <% end %>
   <div class="content_box">
         <div class="image_show">
@@ -13,3 +13,14 @@
         </div>
         <%= @post.content%>
   </div>
+  <% if @post.city.photos.any? %>
+    <div class="content_box">
+      <div id="slideshow">
+        <% @post.city.photos.each do |p| %>
+          <div class="content_box">
+            <%= cl_image_tag p.image, {class: "slideshow_images"} %>
+          </div>
+        <% end  %>
+      </div>
+    </div>
+  <% end %>

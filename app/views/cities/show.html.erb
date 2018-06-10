@@ -1,8 +1,8 @@
 <h1><%= @city.name%></h1>
 <% if @is_admin %>
-<%= link_to "Edit", edit_city_path(@city)%>
+<%= link_to "Edit", edit_city_path(@city), class: "edit_link"%>
 
-<%= link_to "Delete", city_path(@city), method: :delete%>
+<%= link_to "Delete", city_path(@city), class: "edit_link", method: :delete %>
 <% end %>
 <div class="content_box">
   <div class="image_show">
@@ -18,7 +18,7 @@
   <div class="content_box">
     <div id="slideshow">
       <% @city.photos.each do |p| %>
-        <div>
+        <div class="content_box">
           <%= cl_image_tag p.image, {class: "slideshow_images"} %>
         </div>
       <% end  %>

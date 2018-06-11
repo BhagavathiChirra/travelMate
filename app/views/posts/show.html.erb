@@ -1,5 +1,5 @@
 <h1><%= @post.title%></h1>
-
+<%= form_tag id: :form_show_post  do %>
 <div class="container">
   <div class="row">
     <div class="col-sm">
@@ -11,12 +11,22 @@
       <p>
         <%= @post.content%>
       </p>
-
-        <%=  link_to "Edit", edit_post_path(@post)%>
+        <!-- <%=  link_to "Edit", edit_post_path(@post)%>
         |
-        <%=  link_to "Delete", post_path(@post), method: :delete%>
+        <%=  link_to "Delete", post_path(@post), method: :delete %> -->
 
-
+    </div>
+    <div>
+      Comments:
+      <%= text_area_tag id="txt_area_comments" %>
+      <%= submit_tag 'Post', id: :btn_comment%>
+    </div>
+    <div id="comments_div">
     </div>
   </div>
 </div>
+<% end %>
+<script>
+  const postId = <%= @post.id %>;
+  // alert(postId);
+</script>

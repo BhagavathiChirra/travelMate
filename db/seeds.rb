@@ -175,6 +175,7 @@ Phasellus a velit pellentesque, tristique eros ut, facilisis lacus. Pellentesque
 puts "Created #{Post.all.length} posts."
 
 
+
 Photo.destroy_all
 
 o1 = Photo.create image: 'https://media.timeout.com/images/103881996/630/472/image.jpg', city: c5

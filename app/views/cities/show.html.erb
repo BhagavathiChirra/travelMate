@@ -4,6 +4,9 @@
 
 <%= link_to "Delete", city_path(@city), class: "edit_link", method: :delete %>
 <% end %>
+
+
+
 <div class="content_box">
   <div class="image_show">
     <% if @city.image.present? %>
@@ -12,8 +15,10 @@
       <%= cl_image_tag "no_image.png" %>
     <% end %>
   </div>
+
   <%= @city.bio%>
 </div>
+
 <% if @city.photos.any? %>
   <div class="content_box">
     <div id="slideshow">

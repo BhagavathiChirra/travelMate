@@ -1,7 +1,11 @@
 <h1>Beautiful Cities of the World</h1>
 <% @cities.each do |city| %>
   <div class="cities_individual" id="cities_div">
-    <strong><%= link_to city.name, city_path(city) %></strong><br>
-    <%= image_tag city.image %>
-  </div>
+    <strong><%= link_to city_path(city) do %></strong><br>
+      <div>
+        <%= city.name %>
+        <%= image_tag city.image %>
+      </div>
+    </div>
+    <% end %>
 <% end %>

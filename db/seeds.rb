@@ -177,56 +177,33 @@ Phasellus a velit pellentesque, tristique eros ut, facilisis lacus. Pellentesque
 puts "Created #{Post.all.length} posts."
 
 
+
 Photo.destroy_all
 
-o1 = Photo.create image: 'https://media.timeout.com/images/103881996/630/472/image.jpg', city_id: 5
-o2 = Photo.create image: 'https://mydetour.com.au/wp-content/uploads/2015/09/My-Detour-Private-Sydney-Tour-1.png', city_id: 5
-o3 = Photo.create image: 'https://weeklytimes.com.au/wp-content/uploads/2018/01/TarongeCentenaryHeader-678x381.jpg', city_id: 5
-o4 = Photo.create image: 'https://www.movenpick.com/fileadmin/_processed_/e/8/csm_save_and_stay_beach_18_5a12a640be.jpg', city_id: 7
-o5 = Photo.create image: 'https://www.thetravelword.com/wp-content/uploads/2014/05/thailand-phuket-market-bangla.jpg', city_id: 7
-o6 = Photo.create image: 'https://media.nomadicmatt.com/lisboncity1.jpg', city_id: 8
-o7 = Photo.create image: 'https://d2kmm3vx031a1h.cloudfront.net/RmTDena4Seq3l5ukZMe6_16936189_10210992136333259_215753632_o.jpg', city_id: 3
-
-o8 = Photo.create image: 'https://media-cdn.tripadvisor.com/media/photo-s/12/98/44/33/los-angeles-and-hollywood.jpg', city_id: 9
-
-o9 = Photo.create image: 'https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/7wfbAwq/pov-driving-sunshine-climate-tropical-palm-trees-los-angeles-beverly-hills_vj317lmje__F0000.png', city_id: 9
-
-
-o10 = Photo.create image: 'https://cairnscommunications.files.wordpress.com/2017/01/turtle-lake-temple.jpg', city_id: 4
-
-
-o11 = Photo.create image: 'http://www.vietnamtourism.com/imguploads/tourist/Diemden/HaNoi/HANOI/TPHanoi08.JPG', city_id: 4
-
-
-o12 = Photo.create image: 'https://www.ahstatic.com/photos/8804_ho_00_p_2048x1536.jpg', city_id: 6
-
-
-
-o13 = Photo.create image: 'https://a0.muscache.com/airbnb/guidebook/v1_melbourne_getting_around_hero@2x.jpg', city_id: 6
-
-
-
-o14 = Photo.create image: 'http://thegoldenbun.com/wp-content/uploads/2016/07/lisbon-guide-_-what-to-do-in-lisbon-_-sightseeing-lissabon22.jpg', city_id: 8
-
-
-
-o15 = Photo.create image: 'https://worldtubeblog.files.wordpress.com/2015/03/dubai2.jpg', city_id: 10
-
-
-o16 = Photo.create image: 'https://pics.travelhackers.ch/wp-content/uploads/2017/04/23110307/Vietnam-Hanoi-Streets-Flowers.jpg', city_id: 4
-
-
-
-o17 = Photo.create image: 'https://upload.wikimedia.org/wikipedia/commons/e/e5/Lisbon_Street%2C_Portugal_%288619812026%29.jpg', city_id: 8
-
-
-o18 = Photo.create image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Flinders_Street_Station_during_White_Night.jpg/1200px-Flinders_Street_Station_during_White_Night.jpg', city_id: 6
-
-
-o19 = Photo.create image: 'https://www.whatsbest.com.au/wp-content/uploads/events-and-whats-on-in-your-city.jpg', city_id: 6
-
-o20 = Photo.create image: 'https://i.pinimg.com/originals/73/15/af/7315af626e990eb88bf64b0199bc7020.jpg', city_id: 1
-
-o21 = Photo.create image: 'https://st.depositphotos.com/1007970/2030/i/950/depositphotos_20300561-stock-photo-louvre-museum-and-pont-du.jpg', city_id: 1
+o1 = Photo.create image: 'https://media.timeout.com/images/103881996/630/472/image.jpg', city: c5
+o2 = Photo.create image: 'https://mydetour.com.au/wp-content/uploads/2015/09/My-Detour-Private-Sydney-Tour-1.png', city: c5
+o3 = Photo.create image: 'https://weeklytimes.com.au/wp-content/uploads/2018/01/TarongeCentenaryHeader-678x381.jpg', city: c5
+o4 = Photo.create image: 'https://www.movenpick.com/fileadmin/_processed_/e/8/csm_save_and_stay_beach_18_5a12a640be.jpg', city: c7
+o5 = Photo.create image: 'https://www.thetravelword.com/wp-content/uploads/2014/05/thailand-phuket-market-bangla.jpg', city: c7
+o6 = Photo.create image: 'https://media.nomadicmatt.com/lisboncity1.jpg', city: c8
+o7 = Photo.create image: 'https://d2kmm3vx031a1h.cloudfront.net/RmTDena4Seq3l5ukZMe6_16936189_10210992136333259_215753632_o.jpg', city: c3
+o8 = Photo.create image: 'https://media-cdn.tripadvisor.com/media/photo-s/12/98/44/33/los-angeles-and-hollywood.jpg', city: c9
+o9 = Photo.create image: 'https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/7wfbAwq/pov-driving-sunshine-climate-tropical-palm-trees-los-angeles-beverly-hills_vj317lmje__F0000.png', city: c9
+o10 = Photo.create image: 'https://cairnscommunications.files.wordpress.com/2017/01/turtle-lake-temple.jpg', city: c4
+o11 = Photo.create image: 'http://www.vietnamtourism.com/imguploads/tourist/Diemden/HaNoi/HANOI/TPHanoi08.JPG', city: c4
+o12 = Photo.create image: 'https://www.ahstatic.com/photos/8804_ho_00_p_2048x1536.jpg', city: c6
+o13 = Photo.create image: 'https://a0.muscache.com/airbnb/guidebook/v1_melbourne_getting_around_hero@2x.jpg', city: c6
+o14 = Photo.create image: 'http://thegoldenbun.com/wp-content/uploads/2016/07/lisbon-guide-_-what-to-do-in-lisbon-_-sightseeing-lissabon22.jpg', city: c8
+o15 = Photo.create image: 'https://worldtubeblog.files.wordpress.com/2015/03/dubai2.jpg', city: c10
+o16 = Photo.create image: 'https://pics.travelhackers.ch/wp-content/uploads/2017/04/23110307/Vietnam-Hanoi-Streets-Flowers.jpg', city: c4
+o17 = Photo.create image: 'https://upload.wikimedia.org/wikipedia/commons/e/e5/Lisbon_Street%2C_Portugal_%288619812026%29.jpg', city: c8
+o18 = Photo.create image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Flinders_Street_Station_during_White_Night.jpg/1200px-Flinders_Street_Station_during_White_Night.jpg', city: c6
+o19 = Photo.create image: 'https://www.whatsbest.com.au/wp-content/uploads/events-and-whats-on-in-your-city.jpg', city: c6
+o20 = Photo.create image: 'https://i.pinimg.com/originals/73/15/af/7315af626e990eb88bf64b0199bc7020.jpg', city: c1
+o21 = Photo.create image: 'https://st.depositphotos.com/1007970/2030/i/950/depositphotos_20300561-stock-photo-louvre-museum-and-pont-du.jpg', city: c1
+o22 = Photo.create image: 'https://www.holidayguru.ie/wp-content/uploads/2018/01/new-york-city-cityscape-skyline-with-statue-of-liberty-shutterstock_339298199.jpg', city: c3
+o23 = Photo.create image: 'https://www.oceanairtravels.com/common_assets/images/tour/Atlantis-The-Palm.jpg', city: c10
+o24 = Photo.create image: 'https://upload.wikimedia.org/wikipedia/commons/b/b4/London_Eye_Twilight_April_2006.jpg', city: c2
+o25 = Photo.create image: 'https://www.st-christophers.co.uk/__data/assets/image/0006/478977/iStock-510212642.jpg', city: c2
 
 puts "Created #{Photo.all.length} photos."

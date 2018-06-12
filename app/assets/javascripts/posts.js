@@ -9,9 +9,10 @@ $( document ).ready(function() {
   // This gets called when the page loads
   getCommentsJson();
 
-  $('#btn_comment').on('click',
-    function(){
+  $('#btn_comment').on('click', function(){
     // getCommentsJson();
+
+    console.log('post!');
 
     // $.ajax({
     //   type: "POST",
@@ -41,7 +42,7 @@ const getCommentsJson = function(){
 // This gets called on success
 const getComments = data => {
   for(i=0; i< data.length; i++){
-    var commentsContent = `Posted By: ${data[i].user.username}<br>Description: ${data[i].comment}<br>`;
+    var commentsContent = `Posted By: ${data[i].user.username}<br>Description: ${data[i].content}<br>`;
     $p = $('<p>').html(commentsContent);
     $p.appendTo('#comments_div');
   }

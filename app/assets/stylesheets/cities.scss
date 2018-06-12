@@ -4,16 +4,21 @@
 img{
   height: 250px;
   width: 250px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  margin: 10px;
+  border-radius: 5px;
 }
 .cities_individual{
   overflow: auto;
   display: inline-block;
   max-width: 290px;
-  margin: 5px;
+  margin: 2px;
+  // padding-left: 10px;
+  // padding-right: 10px;
 }
+
 #cities_div:hover{
-  opacity: 0.6;
-  border: 2px solid black;
+  filter: saturate(120%);
 }
 
 li {

@@ -1,0 +1,344 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+//
+img {
+  max-width: 300px;
+  filter: grayscale(70%) contrast(100%);
+  transition: all .5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+
+}
+
+
+img:hover{
+  filter: saturate(80%);
+}
+
+a {
+  list-style: none;
+}
+
+#slideshow {
+    // margin: 50px auto;
+    position: relative;
+    // width: 240px;
+    // height: 240px;
+    left: 10%;
+    // previously 700/500
+    width: 900px;
+    height: 610px; // 552 +30 + 20 + 8 - Previously 700
+    padding: 10px;
+    // box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+#slideshow > div {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+}
+
+.slideshow_images {
+  // previously 660/460
+  max-width: 792px;
+  width: 792px;
+  max-height: 552px;
+  height: 552px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.image_show {
+  float: left;
+  width: 270px;
+  height: 270px;
+  overflow: hidden;
+}
+
+.content_box {
+  overflow: hidden;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  vertical-align: middle;
+}
+
+li {
+  list-style: none;
+}
+
+.edit_link {
+  font-size: 18px;
+}
+
+html, body {
+  height: 100%;
+}
+
+h2 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+}
+
+#welcome {
+  margin: 0 auto;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+
+#login_div {
+  text-align: center;
+  background-color: rgba(250, 250, 250, 0.4);
+  position:fixed;
+  top: 300px;
+  left: 50%;
+  width:30em;
+  height:18em;
+  margin-top: -9em; /*set to a negative number 1/2 of your height*/
+  margin-left: -15em; /*set to a negative number 1/2 of your width*/
+  border: 1px rgb(75, 169, 237);
+
+  border-radius: 15px;
+}
+
+#login_form {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+}
+
+
+
+* {
+  padding: 0;
+  margin: 0;
+  color: rgba(42, 42, 42, 0.8);
+}
+
+body {
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+  background-attachment: fixed;
+  // background-image: url('https://www.publicdomainpictures.net/pictures/30000/velka/beach-background.jpg');
+  background-image: url('https://images.pexels.com/photos/21859/pexels-photo.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+
+  .wrapper {
+    width: 100%;
+    min-height: 100%;
+    // height: 100vh;
+    background-color: none;
+    position: absolute;
+    background-size: cover;
+    overflow: hidden;
+    padding-bottom:30px;
+
+
+    span {
+      z-index: 9999;
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      width: 35px;
+      height: 4px;
+      // background: black;
+      background: rgba(42, 42, 42, 0.8);
+      cursor: pointer;
+
+      &:before, &:after {
+        display: block;
+        position: absolute;
+        content: '';
+        left: 0;
+        height: 4px;
+        width: 35px;
+        // background: black;
+        background: rgba(42, 42, 42, 0.8);
+      }
+
+      &:before {
+        top: -8px;
+      }
+
+      &:after {
+        bottom: -8px;
+      }
+    }
+
+    .content_body {
+      // padding-left: 300px;
+      // width: calc(100% - 320px);
+
+      width: calc(100% - 40px);
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 20px;
+      padding-bottom: 10px;
+      text-align: center;
+      float: right;
+      right: 0px;
+      min-height: 100%;
+      &.small_content {
+        padding-left: 300px;
+        width: calc(100% - 320px);
+      }
+    }
+
+    .footer {
+      padding-top: 9px;
+      text-align: center;
+      font-weight: bold;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 25px;   /* Height of the footer */
+      background-color: rgba(187, 187, 187, 0.5);
+    }
+
+    .title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 100px;
+      margin-top: -50px;
+      width: 50%;
+      margin-left: -25%;
+      text-align: center;
+
+      h1 {
+        color: #b3b5b5;
+
+      }
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: -99%;
+      height: 100%;
+      background-color: none;
+      left: 0;
+      width: 100%;
+      transition: all 0.5s ease;
+
+      &.anim {
+        left: 0;
+        bottom: 0;
+        animation: menu-anim 0.5s 1 ease-out normal;
+        width: 25%;
+        transition: all 0.5s ease;
+
+        &.reverse-anim {
+          left: 0;
+          bottom: 0;
+          animation: menu-anim 1.5s 1 ease-out reverse;
+          width: 25%;
+          transition: all 0.5s ease;
+        }
+      }
+
+      ul {
+        width: 100%;
+        text-align: center;
+        margin-top: 100px;
+        padding-left: 0;
+        margin-left: -10px;
+        font-size: 2em;
+        font-weight: 800;
+
+        li {
+          margin: 10px 0;
+
+
+          a {
+            text-decoration: none;
+            color: rgba(42, 42, 42, 0.8);
+            position: relative;
+            display: inline-block;
+            padding: 10px 0;
+            overflow: hidden;
+
+
+
+            &:after {
+              display: block;
+              border-radius: 2px;
+              content: '';
+              left: 0;
+              bottom: -10px;
+              height: 2px;
+              // background: #ffffff;
+              background: rgba(42, 42, 42, 0.8);
+              transform: translateX(-101%);
+            }
+
+            &:hover {
+              text-decoration: none;
+
+              &:after {
+                animation: border-anim 0.5s 1 ease normal;
+                transform: translateX(0);
+              }
+            }
+          }
+
+          @-webkit-keyframes border-anim {
+            0% {
+              transform: translateX(-100%);
+            }
+
+            100% {
+              transform: translateX(0);
+            }
+          }
+
+        }
+      }
+    }
+
+    @-webkit-keyframes menu-anim {
+
+      0% {
+        left: 0;
+        bottom: -99%;
+        width: 100%;
+      }
+
+      33% {
+        left: -99.5%;
+        bottom: -99%;
+        width: 100%;
+      }
+
+      66% {
+        left: -99.5%;
+        bottom: 0;
+        width: 100%;
+      }
+
+      100% {
+        bottom: 0;
+        left: 0;
+        width: 25%;
+      }
+    }
+  }
+}

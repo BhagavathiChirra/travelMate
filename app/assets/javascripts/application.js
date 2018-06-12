@@ -15,3 +15,26 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function () {
+  $('span').click(function() {
+      $('.overlay').toggleClass('anim');
+      $('.content_body').toggleClass('small_content');
+  });
+
+  $('.animation').click(function(){
+      $('.anim').toggleClass('reverse-animation');
+  })
+
+  $("#slideshow > div:gt(0)").hide();
+
+setInterval(function() {
+  $('#slideshow > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+},  3000);
+
+});

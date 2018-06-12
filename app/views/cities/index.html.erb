@@ -1,9 +1,7 @@
-<div id="city_body">
-  <h2>Beautiful Cities of the World</h2>
-  <% @cities.each do |city| %>
-    <div class="cities_individual" id="cities_div">
-      <strong><%= link_to city.name, city_path(city) %></strong><br>
-      <%= image_tag city.image %>
-    </div>
-  <% end %>
-</div>
+<h1>Beautiful Cities of the World</h1>
+<% @cities.each do |city| %>
+  <div class="cities_individual" id="cities_div">
+    <strong><%= link_to city.name, city_path(city) %></strong><br>
+    <%= image_tag city.image %>
+  </div>
+<% end %>

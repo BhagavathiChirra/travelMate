@@ -1,0 +1,14 @@
+<div id="content_body">
+<%= form_for(@city, :html => {:multipart => true}) do |city| %>
+  <%= city.label :name, 'Name :'%>
+  <%= city.text_field :name, class: :field%>
+  <br>
+  <%= city.label :bio, 'Description :'%>
+  <%= city.text_field :bio, class: :field%>
+  <br>
+  <%= city.label :image, 'Image :'%>
+  <%= city.cl_image_upload :image, class: :field%>
+  <br>
+  <%= city.submit%>
+<% end %>
+</div>

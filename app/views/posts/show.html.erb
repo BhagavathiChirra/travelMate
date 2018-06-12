@@ -1,32 +1,37 @@
-<h1><%= @post.title%></h1>
-<%= form_tag id: :form_show_post  do %>
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      <% if @post.image.present? %>
-        <%= cl_image_tag @post.image %>
-      <% else %>
-        <%= cl_image_tag "no_image.png" %>
-      <% end %>
-      <p>
+  <h1><%= @post.title%></h1>
+  <% if @is_admin %>
+  <%= link_to "Edit", edit_post_path(@post), class: "edit_link"%>
+  <%= link_to "Delete", post_path(@post), class: "edit_link", method: :delete%>
+  <% end %>
+  <div class="content_box">
+        <div class="image_show">
+          <% if @post.image.present? %>
+            <%= cl_image_tag @post.image %>
+          <% else %>
+            <%= cl_image_tag "no_image.png" %>
+          <% end %>
+        </div>
         <%= @post.content%>
-      </p>
-        <!-- <%=  link_to "Edit", edit_post_path(@post)%>
-        |
-        <%=  link_to "Delete", post_path(@post), method: :delete %> -->
-
+  </div>
+  <% if @post.city.photos.any? %>
+    <div class="content_box">
+      <div id="slideshow">
+        <% @post.city.photos.each do |p| %>
+          <div class="content_box">
+            <%= cl_image_tag p.image, {class: "slideshow_images"} %>
+          </div>
+        <% end  %>
+      </div>
     </div>
-    <div>
+  <% end %>
+
+  <div>
       Comments:
       <%= text_area_tag id="txt_area_comments" %>
       <%= submit_tag 'Post', id: :btn_comment%>
-    </div>
-    <div id="comments_div">
-    </div>
   </div>
-</div>
-<% end %>
-<script>
+  <div id="comments_div">
+  </div>
+  <script>
   const postId = <%= @post.id %>;
-  // alert(postId);
-</script>
+  </script>

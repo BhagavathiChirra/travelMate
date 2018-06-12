@@ -13,23 +13,32 @@ $( document ).ready(function() {
     getCommentsJson();
 
     $('#btn_comment').on('click', function(){
-      // getCommentsJson();
-
-      // console.log('post!');
-      //
-      // $.post({
-      //   url: "http://localhost:3000/comments",
-      //   data: { comment:  "whatever" } ,
-      // )
-      // .done(function (data) {
-      //   console.log(data);
-      // })
-      // .fail(function (err) {
-      //   console.log(err);
-      // });
-
-
-
+      const content = $('#txt_area_comments').val();
+      $.post({
+        url: "http://localhost:3000/comments",
+        data: { content:  content, post_id: postId } ,
+      })
+      .done(function (data) {
+        $('#txt_area_comments').val('');
+        var commentsContent = `Posted By: ${data.user.username}<br>Comment: ${data.content}<a class='delete_comment' href='javascript:void(0)' id='${data.id}'>Delete</a><br>`;
+        $p = $('<p>').html(commentsContent);
+        $p.appendTo('#comments_div');
+        $('.delete_comment').on('click', function(){
+          var idAttr = $(this).attr('id');
+          const url_destroy = `http://localhost:3000/comments/${idAttr}`;
+          $.ajax({
+            url: url_destroy,
+            type: 'DELETE'
+          })
+          .done(function(){
+            $('#comments_div').html("");
+            getCommentsJson();
+          })
+          .fail(errorHandler);
+          // console.log(idAttr);
+        });
+      })
+      .fail(errorHandler);
     });
 
   } // CSS controller/action test
@@ -48,9 +57,30 @@ const getCommentsJson = function(){
 // This gets called on success
 const getComments = data => {
   for(i=0; i< data.length; i++){
-    var commentsContent = `Posted By: ${data[i].user.username}<br>Description: ${data[i].content}<br>`;
+    var display_delete = "";
+    if(userId === data[i].user.id){
+      display_delete = `<a class='delete_comment' href='javascript:void(0)' id='${data[i].id}'>Delete</a>`;
+    }
+    else {
+      display_delete = "";
+    }
+    var commentsContent = `Posted By: ${data[i].user.username}<br>Comment: ${data[i].content} ${display_delete} <br>`;
     $p = $('<p>').html(commentsContent);
     $p.appendTo('#comments_div');
+    $('.delete_comment').on('click', function(){
+      var idAttr = $(this).attr('id');
+      const url_destroy = `http://localhost:3000/comments/${idAttr}`;
+      $.ajax({
+        url: url_destroy,
+        type: 'DELETE'
+      })
+      .done(function(){
+        $('#comments_div').html("");
+        getCommentsJson();
+      })
+      .fail(errorHandler);
+      // console.log(idAttr);
+    });
   }
 };
 const errorHandler = xhr => {

@@ -34,3 +34,14 @@ a {
   height: 50px;
   width: 800px;
 }
+.delete_comment{
+  font-size: 16px;
+}
+#comments_div > p {
+  text-align: left;
+  margin-left: 50px;
+}
+#comments_div > a {
+  text-align: right;
+  float: right;
+}

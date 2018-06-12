@@ -13,17 +13,7 @@
         </div>
         <%= @post.content%>
   </div>
-  <% if @post.city.photos.any? %>
-    <div class="content_box">
-      <div id="slideshow">
-        <% @post.city.photos.each do |p| %>
-          <div class="content_box">
-            <%= cl_image_tag p.image, {class: "slideshow_images"} %>
-          </div>
-        <% end  %>
-      </div>
-    </div>
-  <% end %>
+  
 
   <div>
       Comments:

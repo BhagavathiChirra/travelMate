@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get "/comments/:id" => "comments#index"
 
+  
+
 
   resources :cities
   resources :posts

@@ -2,31 +2,37 @@
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 $( document ).ready(function() {
-  $('form').submit(function(event){
-    event.preventDefault();
-    return false;
-  });
-  // This gets called when the page loads
-  getCommentsJson();
 
-  $('#btn_comment').on('click', function(){
-    // getCommentsJson();
+  if( $('body.posts.show').length ){
 
-    console.log('post!');
+    $('form').submit(function(event){
+      event.preventDefault();
+      return false;
+    });
+    // This gets called when the page loads
+    getCommentsJson();
 
-    // $.ajax({
-    //   type: "POST",
-    //   url: "http://localhost:3000/comments",
-    //   data: { comment: { comment: "whatever" } },
-    //   success:(data) ->
-    //     alert data.id
-    //     return false
-    //   error:(data) ->
-    //     return false
-    // })
+    $('#btn_comment').on('click', function(){
+      // getCommentsJson();
+
+      // console.log('post!');
+      //
+      // $.post({
+      //   url: "http://localhost:3000/comments",
+      //   data: { comment:  "whatever" } ,
+      // )
+      // .done(function (data) {
+      //   console.log(data);
+      // })
+      // .fail(function (err) {
+      //   console.log(err);
+      // });
 
 
-  });
+
+    });
+
+  } // CSS controller/action test
 
 });
 // Making JSON call to get the comments belongs to that particular Post

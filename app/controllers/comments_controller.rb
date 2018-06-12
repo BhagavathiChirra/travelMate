@@ -6,6 +6,6 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(params[:comment])
     @comment.save
-    format.json { render json: @Comment, status: :created }
+    format.json { render json: @comment, status: :created }
   end
 end

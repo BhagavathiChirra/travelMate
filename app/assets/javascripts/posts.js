@@ -57,30 +57,36 @@ const getCommentsJson = function(){
 // This gets called on success
 const getComments = data => {
   for(i=0; i< data.length; i++){
-    var display_delete = "";
+    const comment = data[i];
+    var $display_delete;
     if(userId === data[i].user.id){
-      display_delete = `<a class='delete_comment' href='javascript:void(0)' id='${data[i].id}'>Delete</a>`;
+
+      $display_delete = $(`<a class="delete_comment">Delete</a>`);
+      $display_delete.on('click', function(){
+        const url_destroy = `http://localhost:3000/comments/${ comment.id }`;
+        // console.log('url', url_destroy);
+        $.ajax({
+          url: url_destroy,
+          type: 'DELETE'
+        })
+        .done(function(){
+          // $('#comments_div').html(""); // getCommentsJson();
+          $(`#comment_${ comment.id }`).remove();
+        })
+        .fail(errorHandler);
+      });
     }
     else {
-      display_delete = "";
+      $display_delete = "";
     }
-    var commentsContent = `Posted By: ${data[i].user.username}<br>Comment: ${data[i].content} ${display_delete} <br>`;
-    $p = $('<p>').html(commentsContent);
-    $p.appendTo('#comments_div');
-    $('.delete_comment').on('click', function(){
-      var idAttr = $(this).attr('id');
-      const url_destroy = `http://localhost:3000/comments/${idAttr}`;
-      $.ajax({
-        url: url_destroy,
-        type: 'DELETE'
-      })
-      .done(function(){
-        $('#comments_div').html("");
-        getCommentsJson();
-      })
-      .fail(errorHandler);
-      // console.log(idAttr);
-    });
+    var commentsContent = `Posted By: ${data[i].user.username}<br>Comment: ${data[i].content}`;
+
+    $comment = $(`<div id="comment_${ comment.id }">`).html(`<p>${ commentsContent }</p>`);
+    $comment.append($display_delete);
+    $comment.appendTo('#comments_div');
+    // $p = $('<p>').html(commentsContent);
+    // $p.appendTo('#comments_div');
+
   }
 };
 const errorHandler = xhr => {

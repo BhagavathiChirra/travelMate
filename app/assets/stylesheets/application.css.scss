@@ -28,7 +28,19 @@ img:hover{
 }
 
 a {
-  list-style: none;
+  text-decoration: none;
+}
+a:hover {
+  color: rgb(90, 17, 198);
+}
+
+.city_link {
+  color: rgba(42, 42, 42, 0.8);
+  font-weight: bold;
+}
+
+.city_link:hover {
+  color: rgb(90, 17, 198);
 }
 
 #slideshow {

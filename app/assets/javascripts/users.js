@@ -6,12 +6,14 @@
 
 $( document ).ready(function() {
 
+  // Only load from the news API on the users#show profile page
+  if( $('body.users.show').length ){
+    const country = $('#articles').data("article");
+    console.log(country);
+    searchNews(country)
+  }
 
-  const country = $('#articles').data("article");
-  console.log(country);
-  searchNews(country)
-
-})
+});
 
 const searchNews = searchQuery => {
   // const address = `${"<%= @address.inspect.html_safe %>"}`;

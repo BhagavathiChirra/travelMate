@@ -35,7 +35,8 @@ const updateNews = data => {
     $('<a>', {
       href: item.webUrl,
       html: item.webTitle,
-      target: '_blank'
+      target: '_blank',
+      id: 'articles'
     }).appendTo('#articles');
     $('<br>').appendTo('#articles');
     // $('<p>').html(item.title).appendTo('#articles');

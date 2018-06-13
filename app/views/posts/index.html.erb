@@ -5,7 +5,7 @@
     <div class="col-sm-4">
 
     <%= link_to post_path(p) do %>
-        <strong><%= link_to p.title, post_path(p) %></strong>
+        <strong><%= link_to p.title, post_path(p), class: 'city_link' %></strong>
         <%= cl_image_tag p.image, class: 'post_main' %>
       </div>
       <% end %>

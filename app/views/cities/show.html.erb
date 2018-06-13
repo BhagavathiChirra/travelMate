@@ -1,42 +1,49 @@
 <h1><%= @city.name%></h1>
-
 <%= link_to "Edit", edit_city_path(@city), class: "edit_link"%> |
-
 <%= link_to "Delete", city_path(@city), class: "edit_link", method: :delete %>
-
-
-
-<div class="content_box">
-  <div class="image_show">
-    <% if @city.image.present? %>
-      <%= cl_image_tag @city.image %>
-    <% else %>
-      <%= cl_image_tag "no_image.png" %>
-    <% end %>
-  </div>
-
-  <%= @city.bio%>
-</div>
 
 <% if @city.photos.any? %>
   <div class="content_box">
     <div id="slideshow">
       <% @city.photos.each do |p| %>
-        <div class="content_box">
-          <%= cl_image_tag p.image, {class: "slideshow_images"} %>
+        <div class="slideshow_content_box">
+          <%= cl_image_tag p.image, {class: "header_image"} %>
         </div>
       <% end  %>
     </div>
-  </div>
 <% end %>
+<br><br>
 
-<div id="map"> </div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <%= @city.bio%>
+    </div>
+    <div class="col-sm-6">
+      <div id="map"> </div>
+    </div>
+
+  </div>
+
+
+<!-- <div class="content_box"> -->
+  <!-- <div class="image_show">
+    <% if @city.image.present? %>
+      <%= cl_image_tag @city.image %>
+    <% else %>
+      <%= cl_image_tag "no_image.png" %>
+    <% end %>
+  </div> -->
+
+</div>
+</div>
+
 <script>
   function initMap() {
     // var myLatLng = {lat: -33.87145, lng: 151.20443};
     var bounds = new google.maps.LatLngBounds();
     var map = new google.maps.Map(document.getElementById('map'),{
-      zoom: 100,
+      zoom: 3,
       center: bounds
     });
     // getting products lat, lng, name from instance variable

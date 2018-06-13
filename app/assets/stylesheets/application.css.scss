@@ -56,9 +56,10 @@
   padding: 35px 0;
 }
 
-p {
+.intro {
   margin: 75px 0;
 }
+
 
 .ParallaxContainer {
   display: flex;
@@ -112,6 +113,11 @@ img {
 
 img:hover{
   filter: saturate(80%);
+}
+
+p {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 a {

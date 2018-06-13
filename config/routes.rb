@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get "/pages" => "pages#home"
 
   get "/comments/:id" => "comments#index"
-
   post "/comments" => "comments#create"
   delete "/comments/:id" => "comments#destroy"
 

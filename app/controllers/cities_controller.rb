@@ -1,4 +1,6 @@
 class CitiesController < ApplicationController
+  before_action :check_if_admin, only: [:edit, :destroy]
+
   def new
     @city = City.new
   end
@@ -11,6 +13,7 @@ class CitiesController < ApplicationController
 
   def show
     @city = City.find(params[:id])
+    @posts = Post.where city_id: params[:id]
   end
 
   def index

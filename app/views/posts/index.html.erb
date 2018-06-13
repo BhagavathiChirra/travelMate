@@ -1,7 +1,14 @@
 <h1>All Posts</h1>
-<% @posts.each do |p| %>
-  <div class="posts_individual" id="posts_div">
-    <strong><%= link_to p.title, post_path(p) %></strong><br>
-    <%= cl_image_tag p.image %>
-  </div>
-<% end %>
+<div class="container">
+  <div class="row">
+    <% @posts.each do |p| %>
+    <div class="col-sm-4">
+
+    <%= link_to post_path(p) do %>
+        <strong><%= link_to p.title, post_path(p), class: 'city_link' %></strong>
+        <%= cl_image_tag p.image, class: 'post_main' %>
+      </div>
+      <% end %>
+    <% end %>
+</div>
+</div>

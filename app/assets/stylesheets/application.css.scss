@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+
  */
 //
 //
@@ -21,7 +22,40 @@
 //   line-height: 28px;
 // }
 
+@import "bootstrap";
+// google map for city show and blog posts show
+#map {
+  // height: 50% !important;
+  width: 100% !important;
+  padding-top: 100%; // using padding top to ensure aspect ratio.
+  overflow: hidden !important;
+  border-radius: 25px;
+}
 
+// header image
+.header_image {
+  // height: 200px;
+  // width:
+
+  height: 350px;
+  // width: 1240px;
+  width: 100%;
+}
+
+// show page for profile, ie User show page
+
+#articles {
+  font-size: 16px;
+  color: rgba(42, 42, 42, 0.8);
+}
+
+#postdisplay {
+  font-size: 16px;
+}
+
+.post_link {
+  font-size: 16px;
+}
 // homepage display parallax scrolling
 #welcome_page {
   letter-spacing: -15px;
@@ -34,11 +68,13 @@
 }
 
 .MainContainer {
-  perspective: 1px;
+  // perspective: 1px;
+  // perspective: 0px;
   transform-style: preserve-3d;
   height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
+
 }
 
 .ContentContainer {
@@ -46,8 +82,9 @@
   display: block;
   background-color: white;
   z-index: 1;
-  width: 1355px;
-  margin-left: 7px;
+  // width: 1355px;
+  width: 100%;
+  // margin-left: 1px;
 }
 
 .Content {
@@ -66,8 +103,10 @@
   flex: 1 0 auto;
   position: relative;
   z-index: -1;
-  height: 50vh;
-  width: 1355px;
+  // height: 50vh;
+  height: 107vh;
+  // width: 1355px;
+  width: 100%;
   justify-content: center;
   align-items: center;
   transform: translateZ(-1px) scale(2);
@@ -87,15 +126,6 @@
   overflow-y: scroll;
 }
 
-.ParallaxContainer {
-  display: flex;
-  flex: 1 0 auto;
-  position: relative;
-  height: 107vh;
-  transform: translateZ(-1px) scale(2);
-  z-index: -1;
-}
-
 .ContentContainer {
   display: block;
   position: relative;
@@ -103,15 +133,20 @@
   z-index: 1;
 }
 
-img {
-  max-width: 300px;
+img.post_main {
+  width: 300px;
+  height: 200px;
+  margin: 2px;
   filter: grayscale(70%) contrast(100%);
   transition: all .5s cubic-bezier(0.645, 0.045, 0.355, 1);
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  overflow: auto;
+  display: inline-block;
+  max-width: 100%;
 }
 
 
-img:hover{
+img:hover {
   filter: saturate(80%);
 }
 
@@ -122,7 +157,14 @@ p {
 
 a {
   text-decoration: none;
+  color: rgba(42, 42, 42, 0.8);
+  color: none;
 }
+
+#cities_div:hover{
+  filter: saturate(120%);
+}
+
 
 .city_link {
   color: rgba(42, 42, 42, 0.8);
@@ -131,24 +173,15 @@ a {
 
 .city_link:hover, #article:hover, a:hover {
   color: rgb(90, 17, 198);
-}
-
-#articles {
-  font-size: 16px;
-  color: rgba(42, 42, 42, 0.8);
+  text-decoration: none;
+  transform: scale(1.2);
 }
 
 #slideshow {
-    // margin: 50px auto;
     position: relative;
-    // width: 240px;
-    // height: 240px;
-    left: 10%;
-    // previously 700/500
-    width: 900px;
-    height: 610px; // 552 +30 + 20 + 8 - Previously 700
-    padding: 10px;
-    // box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    height: 350px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
 #slideshow > div {
@@ -160,7 +193,6 @@ a {
 }
 
 .slideshow_images {
-  // previously 660/460
   max-width: 792px;
   width: 792px;
   max-height: 552px;
@@ -170,18 +202,22 @@ a {
 
 .image_show {
   float: left;
-  width: 270px;
-  height: 270px;
+  margin-right: 40px;
+  margin-bottom: 30px;
   overflow: hidden;
 }
 
 .content_box {
   overflow: hidden;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-right: 50px;
-  padding-left: 50px;
+  padding: 20px 100px;
   vertical-align: middle;
+  text-align: justify;
+}
+
+.slideshow_content_box {
+  overflow: hidden;
+  vertical-align: middle;
+  text-align: justify;
 }
 
 li {
@@ -202,10 +238,6 @@ h2 {
 
 }
 
-// #welcome_page {
-//   font-size: 40px;
-// }
-
 #welcome {
   margin: 0 auto;
   text-align: center;
@@ -225,7 +257,6 @@ h2 {
   margin-top: -9em; /*set to a negative number 1/2 of your height*/
   margin-left: -15em; /*set to a negative number 1/2 of your width*/
   border: 1px rgb(75, 169, 237);
-
   border-radius: 15px;
 }
 
@@ -235,8 +266,6 @@ h2 {
   left: 0;
   right: 0;
 }
-
-
 
 * {
   padding: 0;
@@ -248,7 +277,6 @@ body {
   position: relative;
   font-family: 'Open Sans', sans-serif;
   background-attachment: fixed;
-  // background-image: url('https://www.publicdomainpictures.net/pictures/30000/velka/beach-background.jpg');
   background-image: url('https://images.pexels.com/photos/21859/pexels-photo.jpg');
   background-position: center;
   background-repeat: no-repeat;
@@ -258,54 +286,32 @@ body {
   .wrapper {
     width: 100%;
     min-height: 100%;
-    // height: 100vh;
     background-color: none;
     position: absolute;
     background-size: cover;
     overflow: hidden;
     padding-bottom:30px;
 
-
-    span {
-      z-index: 9999;
-      position: absolute;
-      top: 20px;
-      left: 30px;
-      width: 35px;
-      height: 4px;
-      background: rgba(42, 42, 42, 0.8);
+    div#menu {
+      z-index: 999999;
       cursor: pointer;
-
-      &:before, &:after {
-        display: block;
-        position: absolute;
-        content: '';
-        left: 0;
-        height: 4px;
-        width: 35px;
-        // background: black;
-        background: rgba(42, 42, 42, 0.8);
-      }
-
-
-
-      &:before {
-        top: -8px;
-      }
-
-      &:after {
-        bottom: -8px;
-      }
+      display: block;
+      position: absolute;
+      width: 65px;
+      height: 65px;
+      top: 10px;
+      left: 10px;
+      background: url('https://cdn4.iconfinder.com/data/icons/tupix-1/30/list-512.png') no-repeat center center;
+      background-size: cover;
+      padding: 0;
+      text-indent: 9999px;
     }
 
 
     .content_body {
-      // padding-left: 300px;
-      // width: calc(100% - 320px);
-
       width: calc(100% - 40px);
-      padding-left: 20px;
-      padding-right: 20px;
+      padding-left: 40px;
+      padding-right: 80px;
       padding-top: 40px;
       padding-bottom: 10px;
       text-align: center;
@@ -313,9 +319,8 @@ body {
       right: 0px;
       min-height: 100%;
       &.small_content {
-        padding-left: 300px;
+        padding-left: 10px;
         width: calc(100% - 320px);
-
       }
     }
 
@@ -342,9 +347,9 @@ body {
 
       h1 {
         color: #b3b5b5;
-
       }
     }
+
 
     .overlay {
       position: absolute;
@@ -392,8 +397,6 @@ body {
             padding: 10px 0;
             overflow: hidden;
 
-
-
             &:after {
               display: block;
               border-radius: 2px;
@@ -401,7 +404,6 @@ body {
               left: 0;
               bottom: -10px;
               height: 2px;
-              // background: #ffffff;
               background: rgba(42, 42, 42, 0.8);
               transform: translateX(-101%);
             }
@@ -425,10 +427,10 @@ body {
               transform: translateX(0);
             }
           }
-
         }
       }
     }
+
 
     @-webkit-keyframes menu-anim {
 

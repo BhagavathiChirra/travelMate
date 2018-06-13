@@ -209,9 +209,25 @@ puts "Created #{Photo.all.length} photos."
 
 Comment.destroy_all
 
-cm1 = Comment.create content: 'Sydney is the best ever', post: p1, user: u1
-cm2 = Comment.create content: 'Sydney is really cool', post: p1, user: u2
-cm3 = Comment.create content: 'I love Phuket', post: p3, user: u2
-cm3 = Comment.create content: 'I have not visited Phuket', post: p3, user: u1
+cm1 = Comment.create content: 'Sydney is the best ever.', post: p1, user: u1
+cm2 = Comment.create content: 'Sydney is really cool.', post: p1, user: u2
+cm3 = Comment.create content: 'I love Phuket.', post: p3, user: u1
+cm4 = Comment.create content: 'I have not visited Phuket.', post: p3, user: u3
+cm5 = Comment.create content: 'New York is amazinggg!!!', post: p2, user: u2
+cm6 = Comment.create content: 'Phuket is lovely.', post: p4, user: u3
+cm7 = Comment.create content: 'Sydney is the greatest city to live in.', post: p5, user: u1
+cm8 = Comment.create content: 'My trip to Dubai was really great!', post: p6, user: u2
+cm9 = Comment.create content: 'People from Melbourne are really friendly!', post: p7, user: u3
+cm10 = Comment.create content: 'London markets are brilliant', post: p8, user: u2
+cm11 = Comment.create content: 'Hanoi street food is one of the best in the world!', post: p9, user: u1
+cm12 = Comment.create content: 'I once met Channing Tatum in LA', post: p10, user: u1
+cm13 = Comment.create content: 'I have not been to Lisbon, but I would love to go there in the near future.', post: p11, user: u3
+cm14 = Comment.create content: 'Paris was not as great as I expected', post: p12, user: u1
+cm15 = Comment.create content: 'People of Hanoi are lovely.', post: p13, user: u2
+cm16 = Comment.create content: 'New York nightlife is so good.', post: p14, user: u1
+cm17 = Comment.create content: 'I love the variety of food in Melbourne.', post: p3, user: u3
+cm18 = Comment.create content: 'I have not visited Dubai.', post: p6, user: u1
+
+
 
 puts "Created #{Comment.all.length} comments."

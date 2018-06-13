@@ -3,34 +3,41 @@
   <%= link_to "Edit", edit_post_path(@post), class: "edit_link"%> |
   <%= link_to "Delete", post_path(@post), class: "edit_link", method: :delete%>
   <% end %>
+  <% if @post.image.present? %>
+    <%= cl_image_tag @post.image, class: 'header_image' %>
+  <% else %>
+    <%= cl_image_tag "no_image.png" %>
+  <% end %>
+<br> <br>
   <div class="container">
     <div class="row">
-      <div class="col-sm-6">
-  <!-- <div class="content_box"> -->
-        <!-- <div class="image_show"> -->
-          <% if @post.image.present? %>
-            <%= cl_image_tag @post.image, class: 'post_main' %>
-          <% else %>
-            <%= cl_image_tag "no_image.png" %>
-          <% end %>
-          <%= @post.content%>
-        </div>
-        <div class="col-sm-6">
-          <div id="map"> </div>
-        </div>
+      <div class="col-xs-6 col-sm-6">
+
+        <%= @post.content%>
       </div>
 
-    </div>  
+        <div class="col-sm-6">
+          <div id="map"> </div>
+          <br>
+          <div>
+              Comments:
+              <%= text_area_tag id="txt_area_comments" %>
+              <%= submit_tag 'Post', id: :btn_comment%>
+          </div>
+          <div id="comments_div">
+
+          </div>
+        </div>
+          </div>
+        </div>
 
 
-  <div>
-      Comments:
-      <%= text_area_tag id="txt_area_comments" %>
-      <%= submit_tag 'Post', id: :btn_comment%>
-  </div>
-  <div id="comments_div">
 
-  </div>
+
+
+
+
+
   <script>
   const postId = <%= @post.id %>;
   const userId = <%= @current_user.id %>;

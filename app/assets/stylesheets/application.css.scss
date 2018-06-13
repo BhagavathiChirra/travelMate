@@ -31,21 +31,24 @@
   border-radius: 25px;
 }
 
+// header image
+.header_image {
+  // height: 200px;
+  // width:
+
+  height: 350px;
+  width: 1240px;
+}
+
 // show page for profile, ie User show page
 
-#blogpost {
-  float: left;
-}
-
-#articles_show {
-  float: right;
-  font-size: 15px;
-}
-
 #postdisplay {
-  font-size: 15px;
+  font-size: 16px;
 }
 
+.post_link {
+  font-size: 16px;
+}
 // homepage display parallax scrolling
 #welcome_page {
   letter-spacing: -15px;
@@ -63,6 +66,7 @@
   height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
+
 }
 
 .ContentContainer {
@@ -130,9 +134,14 @@
 img.post_main {
   width: 300px;
   height: 200px;
+  // max-width: 290px;
+  margin: 2px;
   filter: grayscale(70%) contrast(100%);
   transition: all .5s cubic-bezier(0.645, 0.045, 0.355, 1);
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  overflow: auto;
+  display: inline-block;
+  max-width: 100%;
 }
 
 
@@ -295,13 +304,17 @@ body {
       z-index: 999999;
       cursor: pointer;
       border: 1px solid red;
-      display: inline-block;
+      display: block;
       position: absolute;
       width: 35px;
       height: 35px;
       top: 20px;
       left: 30px;
-      // background-image: url();
+      background-image: url('https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png');
+      background-repeat: no-repeat;
+      padding: 0;
+      text-indent: 9999px;
+
 
     }
 
@@ -352,7 +365,7 @@ body {
       right: 0px;
       min-height: 100%;
       &.small_content {
-        padding-left: 100px;
+        padding-left: 10px;
         width: calc(100% - 320px);
 
       }
@@ -504,4 +517,5 @@ body {
 
  body.pages.home .overlay {
    font-family: 'Helvetica' !important;
+
   }

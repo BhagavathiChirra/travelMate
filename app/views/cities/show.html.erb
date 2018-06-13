@@ -1,9 +1,8 @@
 <h1><%= @city.name%></h1>
-<% if @is_admin %>
+
 <%= link_to "Edit", edit_city_path(@city), class: "edit_link"%> |
 
 <%= link_to "Delete", city_path(@city), class: "edit_link", method: :delete %>
-<% end %>
 
 
 
@@ -30,3 +29,31 @@
     </div>
   </div>
 <% end %>
+
+<div id="map"> </div>
+<script>
+  function initMap() {
+    // var myLatLng = {lat: -33.87145, lng: 151.20443};
+    var bounds = new google.maps.LatLngBounds();
+    var map = new google.maps.Map(document.getElementById('map'),{
+      zoom: 100,
+      center: bounds
+    });
+    // getting products lat, lng, name from instance variable
+    var posts = <%= @posts.map{ |p| {lat: p.latitude, lng: p.longitude, name: p.title } }.to_json.html_safe %>;
+    // looping over products to make marker for each product
+    for(let i=0; i < posts.length; i++)
+    {
+      var marker = new google.maps.Marker({
+        position: posts[i],
+        map: map,
+        title: posts[i].name
+      });
+      bounds.extend(marker.position);
+    }
+    map.fitBounds( bounds );
+  }
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ0a73hhDIswEV4mTLGjmLIx4oHHFUelM&callback=initMap">
+    </script>

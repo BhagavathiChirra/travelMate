@@ -1,2 +1,22 @@
-<h3>Hello <%= @user.username %>!</h3>
+<h1>Hello, My name is <%= @user.username %>!</h1>
+<h2>Welcome to my travel page</h2>
 <!-- <div id="articles" data-article="<%= @user.address %>">Loading news from your hometown now...</div> -->
+
+
+<div class="content_body">
+  <div id="blogpost">
+    <h3>Check out my blog posts</h3>
+      <ul id="postdisplay">
+        <% @user.posts.each do |post| %>
+          <li>
+          <%= link_to post.title, post_path(post) %>
+          </li>
+        <% end %>
+      </ul>
+      <%= cl_image_tag @user.image %>
+    </div>
+
+  <div id="articles_show">
+
+   <div id="articles" data-article="<%= @user.address %>">Loading news from your hometown now...</div>
+ </div>

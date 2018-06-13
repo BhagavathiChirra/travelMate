@@ -1,19 +1,27 @@
   <h1><%= @post.title%></h1>
-  <% if @is_admin %>
-  <%= link_to "Edit", edit_post_path(@post), class: "edit_link"%>
+  <% if @current_user.present? && @post.user == @current_user %>
+  <%= link_to "Edit", edit_post_path(@post), class: "edit_link"%> |
   <%= link_to "Delete", post_path(@post), class: "edit_link", method: :delete%>
   <% end %>
-  <div class="content_box">
-        <div class="image_show">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+  <!-- <div class="content_box"> -->
+        <!-- <div class="image_show"> -->
           <% if @post.image.present? %>
-            <%= cl_image_tag @post.image %>
+            <%= cl_image_tag @post.image, class: 'post_main' %>
           <% else %>
             <%= cl_image_tag "no_image.png" %>
           <% end %>
+          <%= @post.content%>
         </div>
-        <%= @post.content%>
-  </div>
-  
+        <div class="col-sm-6">
+          <div id="map"> </div>
+        </div>
+      </div>
+
+    </div>  
+
 
   <div>
       Comments:
@@ -21,8 +29,27 @@
       <%= submit_tag 'Post', id: :btn_comment%>
   </div>
   <div id="comments_div">
+
   </div>
   <script>
   const postId = <%= @post.id %>;
   const userId = <%= @current_user.id %>;
   </script>
+
+  <script>
+        function initMap() {
+          var myLatLng = {lat: <%= @post.latitude %>, lng: <%= @post.longitude %>};
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 14,
+            center: myLatLng
+          });
+          var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: "<%= @post.title %>"
+          });
+        }
+  </script>
+  <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ0a73hhDIswEV4mTLGjmLIx4oHHFUelM&callback=initMap">
+      </script>

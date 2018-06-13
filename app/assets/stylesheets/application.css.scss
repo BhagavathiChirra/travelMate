@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+
  */
 //
 //
@@ -21,6 +22,29 @@
 //   line-height: 28px;
 // }
 
+@import "bootstrap";
+// google map for city show and blog posts show
+#map {
+  height: 500px !important;
+  width: 500px !important;
+  overflow: hidden !important;
+  border-radius: 25px;
+}
+
+// show page for profile, ie User show page
+
+#blogpost {
+  float: left;
+}
+
+#articles_show {
+  float: right;
+  font-size: 15px;
+}
+
+#postdisplay {
+  font-size: 15px;
+}
 
 // homepage display parallax scrolling
 #welcome_page {
@@ -103,8 +127,9 @@
   z-index: 1;
 }
 
-img {
-  max-width: 300px;
+img.post_main {
+  width: 300px;
+  height: 200px;
   filter: grayscale(70%) contrast(100%);
   transition: all .5s cubic-bezier(0.645, 0.045, 0.355, 1);
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
@@ -170,18 +195,19 @@ a {
 
 .image_show {
   float: left;
-  width: 270px;
-  height: 270px;
+  margin-right: 40px;
+  margin-bottom: 30px;
+  // width: 270px;
+  // height: 270px;
   overflow: hidden;
 }
 
 .content_box {
   overflow: hidden;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-right: 50px;
-  padding-left: 50px;
+  padding: 20px 100px;
   vertical-align: middle;
+  text-align: justify;
+
 }
 
 li {
@@ -265,38 +291,51 @@ body {
     overflow: hidden;
     padding-bottom:30px;
 
-
-    span {
-      z-index: 9999;
+    div#menu {
+      z-index: 999999;
+      cursor: pointer;
+      border: 1px solid red;
+      display: inline-block;
       position: absolute;
+      width: 35px;
+      height: 35px;
       top: 20px;
       left: 30px;
-      width: 35px;
-      height: 4px;
-      background: rgba(42, 42, 42, 0.8);
-      cursor: pointer;
+      // background-image: url();
 
-      &:before, &:after {
-        display: block;
-        position: absolute;
-        content: '';
-        left: 0;
-        height: 4px;
-        width: 35px;
-        // background: black;
-        background: rgba(42, 42, 42, 0.8);
-      }
-
-
-
-      &:before {
-        top: -8px;
-      }
-
-      &:after {
-        bottom: -8px;
-      }
     }
+
+    //
+    // span.menu {
+    //   z-index: 9999;
+    //   position: relative;
+    //   // top: 20px;
+    //   // left: 30px;
+    //   width: 35px;
+    //   height: 4px;
+    //   background: rgba(42, 42, 42, 0.8);
+    //
+    //   &:before, &:after {
+    //     display: block;
+    //     position: absolute;
+    //     content: '';
+    //     left: 0;
+    //     height: 4px;
+    //     width: 35px;
+    //     // background: black;
+    //     background: rgba(42, 42, 42, 0.8);
+    //   }
+    //
+    //
+    //
+    //   &:before {
+    //     top: -8px;
+    //   }
+    //
+    //   &:after {
+    //     bottom: -8px;
+    //   }
+    // }
 
 
     .content_body {
@@ -313,7 +352,7 @@ body {
       right: 0px;
       min-height: 100%;
       &.small_content {
-        padding-left: 300px;
+        padding-left: 100px;
         width: calc(100% - 320px);
 
       }
@@ -345,6 +384,7 @@ body {
 
       }
     }
+
 
     .overlay {
       position: absolute;
@@ -430,6 +470,7 @@ body {
       }
     }
 
+
     @-webkit-keyframes menu-anim {
 
       0% {
@@ -458,3 +499,9 @@ body {
     }
   }
 }
+
+
+
+ body.pages.home .overlay {
+   font-family: 'Helvetica' !important;
+  }

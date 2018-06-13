@@ -14,27 +14,45 @@
 //= require activestorage
 //= require jquery
 //= require jquery_ujs
+//= require jquery3
+//= require popper
+//= require bootstrap
 //= require_tree .
 
+var menu_visible = false;
+
 $(document).ready(function () {
-  $('span').click(function() {
+  $('#menu').click(function() {
+
+    if(menu_visible){
+      console.log('hide');
+      $('.anim').toggleClass('reverse-animation');
       $('.overlay').toggleClass('anim');
       $('.content_body').toggleClass('small_content');
+    } else {
+      console.log('show');
+      $('.overlay').toggleClass('anim');
+      $('.content_body').toggleClass('small_content');
+    }
+    menu_visible = !menu_visible;
   });
-
-  $('.animation').click(function(){
-      $('.anim').toggleClass('reverse-animation');
-  })
+  //     $('.overlay').toggleClass('anim');
+  //     $('.content_body').toggleClass('small_content');
+  // });
+  //
+  // $('.animation').click(function(){
+  //     $('.anim').toggleClass('reverse-animation');
+  // })
 
   $("#slideshow > div:gt(0)").hide();
 
-setInterval(function() {
-  $('#slideshow > div:first')
-    .fadeOut(1000)
-    .next()
-    .fadeIn(1000)
-    .end()
-    .appendTo('#slideshow');
-},  3000);
+  setInterval(function() {
+    $('#slideshow > div:first')
+      .fadeOut(1000)
+      .next()
+      .fadeIn(1000)
+      .end()
+      .appendTo('#slideshow');
+  },  3000);
 
 });

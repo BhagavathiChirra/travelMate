@@ -8,6 +8,7 @@ $( document ).ready(function() {
     });
     // This gets called when the page loads
     getCommentsJson();
+    // getLikes();
 
     $('#btn_comment').on('click', function(){
       const content = $('#txt_area_comments').val();
@@ -19,6 +20,23 @@ $( document ).ready(function() {
         $('#txt_area_comments').val('');
         const comment = data;
         displayComment(comment);
+      })
+      .fail(errorHandler);
+    });
+
+
+    $('#btn_like').on('click', function(){
+      console.log("btn_like  click");
+      $.get({
+        url: `http://localhost:3000/posts/${postId}/like`
+      })
+      .done(function(data){
+        // console.log(data);
+        if(data.added){
+          // $(btn_like).addClass()
+        }else if(data.removed){
+
+        }
       })
       .fail(errorHandler);
     });
@@ -70,8 +88,7 @@ const displayComment = comment => {
     $display_delete = "";
   }
   var commentsContent = `Posted By: ${comment.user.username}<br>Comment: ${comment.content}`;
-
-  $comment = $(`<div id="comment_${ comment.id }">`).html(`<p>${ commentsContent }</p>`);
+  $comment = $(`<div class="comment_div" id="comment_${ comment.id }">`).html(`<p>${ commentsContent }</p>`);
   $comment.append($display_delete);
   $comment.appendTo('#comments_div');
 };

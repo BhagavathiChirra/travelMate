@@ -1,8 +1,10 @@
   <h1><%= @post.title%></h1>
   <% if @is_admin %>
   <%= link_to "Edit", edit_post_path(@post), class: "edit_link"%>
+  |
   <%= link_to "Delete", post_path(@post), class: "edit_link", method: :delete%>
   <% end %>
+  <%= submit_tag 'Like', id: :btn_like %>
   <div class="content_box">
         <div class="image_show">
           <% if @post.image.present? %>
@@ -13,7 +15,7 @@
         </div>
         <%= @post.content%>
   </div>
-  
+
 
   <div>
       Comments:

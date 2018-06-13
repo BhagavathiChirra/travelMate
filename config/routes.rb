@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   post "/comments" => "comments#create"
   delete "/comments/:id" => "comments#destroy"
 
-
+  post "/comments" => "comments#create"
+  delete "/comments/:id" => "comments#destroy"
+  
   resources :cities
   resources :posts
   resources :users

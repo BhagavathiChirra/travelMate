@@ -228,6 +228,4 @@ cm16 = Comment.create content: 'New York nightlife is so good.', post: p14, user
 cm17 = Comment.create content: 'I love the variety of food in Melbourne.', post: p3, user: u3
 cm18 = Comment.create content: 'I have not visited Dubai.', post: p6, user: u1
 
-
-
 puts "Created #{Comment.all.length} comments."

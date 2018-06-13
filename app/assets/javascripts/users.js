@@ -16,20 +16,12 @@ $( document ).ready(function() {
 });
 
 const searchNews = searchQuery => {
-  // const address = `${"<%= @address.inspect.html_safe %>"}`;
-  // console.log(address);
   console.log(searchQuery);
-  const URL = 'https://api.newsriver.io/v2/search';
-  $.ajaxSetup({
-    headers : {
-      'Authorization' : 'sBBqsGXiYgF0Db5OV5tAw6TRtAPZuQS1KWUp3WzS3spoIvLoT56AmBcIA-CX97czn2pHZrSf1gT2PUujH1YaQA'
-      }
-  });
+  const URL = 'https://content.guardianapis.com/search';
   $.getJSON(URL, {
-    query: encodeURI(searchQuery),
-    sortBy: '_score',
-    sortOrder: 'DESC',
-    limit: '15'
+    q: searchQuery,
+    section: 'travel',
+    'api-key': 'cde3aa09-a7bf-4d4c-a07e-14eddc349b5a'
   })
   .done(updateNews)
   .fail()
@@ -38,11 +30,11 @@ const searchNews = searchQuery => {
 const updateNews = data => {
   console.log(data);
   $('#articles').empty();
-  data.forEach(function(item){
+  data.response.results.forEach(function(item){
     // console.log(item.title);
     $('<a>', {
-      href: item.url,
-      html: item.title,
+      href: item.webUrl,
+      html: item.webTitle,
       target: '_blank'
     }).appendTo('#articles');
     $('<br>').appendTo('#articles');

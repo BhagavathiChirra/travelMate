@@ -1,6 +1,3 @@
-// # Place all the behaviors and hooks related to the matching controller here.
-// # All this logic will automatically be available in application.js.
-// # You can use CoffeeScript in this file: http://coffeescript.org/
 $( document ).ready(function() {
 
   if( $('body.posts.show').length ){
@@ -20,33 +17,8 @@ $( document ).ready(function() {
       })
       .done(function (data) {
         $('#txt_area_comments').val('');
-        var comment = data;
-        // console.log(comment);
-        var $display_delete;
-        if(userId === comment.user.id){
-          $display_delete = $(`<a class="delete_comment">Delete</a>`);
-          $display_delete.on('click', function(){
-            const url_destroy = `http://localhost:3000/comments/${ comment.id }`;
-            // console.log('url', url_destroy);
-            $.ajax({
-              url: url_destroy,
-              type: 'DELETE'
-            })
-            .done(function(){
-              // $('#comments_div').html(""); // getCommentsJson();
-              $(`#comment_${ comment.id }`).remove();
-            })
-            .fail(errorHandler);
-          });
-        }
-        else {
-          $display_delete = "";
-        }
-        var commentsContent = `Posted By: ${comment.user.username}<br>Comment: ${comment.content}`;
-
-        $comment = $(`<div id="comment_${ comment.id }">`).html(`<p>${ commentsContent }</p>`);
-        $comment.append($display_delete);
-        $comment.appendTo('#comments_div');
+        const comment = data;
+        displayComment(comment);
       })
       .fail(errorHandler);
     });
@@ -68,37 +40,38 @@ const getCommentsJson = function(){
 const getComments = data => {
   for(i=0; i< data.length; i++){
     const comment = data[i];
-    var $display_delete;
-    if(userId === comment.user.id){
-
-      $display_delete = $(`<a class="delete_comment">Delete</a>`);
-      $display_delete.on('click', function(){
-        const url_destroy = `http://localhost:3000/comments/${ comment.id }`;
-        // console.log('url', url_destroy);
-        $.ajax({
-          url: url_destroy,
-          type: 'DELETE'
-        })
-        .done(function(){
-          // $('#comments_div').html(""); // getCommentsJson();
-          $(`#comment_${ comment.id }`).remove();
-        })
-        .fail(errorHandler);
-      });
-    }
-    else {
-      $display_delete = "";
-    }
-    var commentsContent = `Posted By: ${comment.user.username}<br>Comment: ${comment.content}`;
-
-    $comment = $(`<div id="comment_${ comment.id }">`).html(`<p>${ commentsContent }</p>`);
-    $comment.append($display_delete);
-    $comment.appendTo('#comments_div');
-    // $p = $('<p>').html(commentsContent);
-    // $p.appendTo('#comments_div');
-
+    displayComment(comment);
   }
 };
 const errorHandler = xhr => {
   console.warn('Error with comments request: ', xhr.responseText, xhr);
+};
+
+const displayComment = comment => {
+  var $display_delete;
+  if(userId === comment.user.id){
+
+    $display_delete = $(`<a class="delete_comment">Delete</a>`);
+    $display_delete.on('click', function(){
+      const url_destroy = `http://localhost:3000/comments/${ comment.id }`;
+      // console.log('url', url_destroy);
+      $.ajax({
+        url: url_destroy,
+        type: 'DELETE'
+      })
+      .done(function(){
+        // $('#comments_div').html(""); // getCommentsJson();
+        $(`#comment_${ comment.id }`).remove();
+      })
+      .fail(errorHandler);
+    });
+  }
+  else {
+    $display_delete = "";
+  }
+  var commentsContent = `Posted By: ${comment.user.username}<br>Comment: ${comment.content}`;
+
+  $comment = $(`<div id="comment_${ comment.id }">`).html(`<p>${ commentsContent }</p>`);
+  $comment.append($display_delete);
+  $comment.appendTo('#comments_div');
 };

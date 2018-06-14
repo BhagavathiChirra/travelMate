@@ -52,10 +52,17 @@
             zoom: 14,
             center: myLatLng
           });
+          var contentString = '<div id="content">'+ "<%= @post.title %>" +'</div>';
+          var infowindow = new google.maps.InfoWindow({
+          content: contentString
+          });
           var marker = new google.maps.Marker({
             position: myLatLng,
             map: map,
             title: "<%= @post.title %>"
+          });
+          marker.addListener('click', function() {
+          infowindow.open(map, marker);
           });
         }
   </script>

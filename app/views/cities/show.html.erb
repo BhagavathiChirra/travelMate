@@ -47,7 +47,7 @@
       center: bounds
     });
     // getting posts lat, lng, name from instance variable
-    var posts = <%= @posts.map{ |p| {lat: p.latitude, lng: p.longitude, name: p.title } }.to_json.html_safe %>;
+    var posts = <%= @posts.map{ |p| {lat: p.latitude, lng: p.longitude, name: p.title, id: p.id } }.to_json.html_safe %>;
     // looping over products to make marker for each product
     for(let i=0; i < posts.length; i++)
     {
@@ -56,6 +56,14 @@
         map: map,
         title: posts[i].name
       });
+      var contentString = '<div id="content">'+ `<a href="http://localhost:3000/posts/${posts[i].id}">${posts[i].name}</a>` +'</div>';
+      var infowindow = new google.maps.InfoWindow();
+      google.maps.event.addListener(marker, 'click', function(contentString){
+      return function(){
+        infowindow.setContent(contentString);
+        infowindow.open(map, this);
+      }
+    }(contentString));
       bounds.extend(marker.position);
     }
     map.fitBounds( bounds );

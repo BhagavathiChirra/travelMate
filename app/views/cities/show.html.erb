@@ -1,4 +1,4 @@
-<h1><%= @city.name%></h1>
+<h1><strong><%= @city.name%></strong></h1>
 <%= link_to "Edit", edit_city_path(@city), class: "edit_link"%> |
 <%= link_to "Delete", city_path(@city), class: "edit_link", method: :delete %>
 
@@ -17,9 +17,23 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6">
-      <%= @city.bio%>
+        <div>
+          <%= @city.bio%>
+        </div>
+        <br>
+        <div><h4>Blog Posts about this beautiful city:</h4>
+          <% @city.posts.each do |post| %>
+            <li class='citypost'>
+            <%= link_to post.title, post_path(post) %>
+            </li>
+          <% end %>
+        </div>
     </div>
-    <div class="col-sm-6">
+
+
+
+
+    <div class="col-xs-6 col-sm-6">
       <div id="map"> </div>
     </div>
 

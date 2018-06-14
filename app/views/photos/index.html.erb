@@ -1,9 +1,14 @@
-<!-- <h2>Pictures of all of our Cities</h2>
-<ul>
-<% @photos.each do |p| %>
-<li>
-<%= cl_image_tag p.image %>
+<h2><strong>Pictures of all of our Cities</strong></h2>
+<div class="content_box">
+<div class="container">
+  <div class="row">
+    <% @photos.each do |p| %>
+      <div class="col-sm-4">
 
-</li>
+<li><%= cl_image_tag p.image, class: 'post_main' %></li>
+
+</div>
 <% end %>
-</ul> -->
+</div>
+</div>
+</div>

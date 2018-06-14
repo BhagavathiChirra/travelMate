@@ -46,7 +46,7 @@
 
 #articles {
   font-size: 16px;
-  color: rgba(42, 42, 42, 0.8);
+  color: rgb(156, 77, 119);
 }
 
 #postdisplay {
@@ -55,7 +55,9 @@
 
 .post_link {
   font-size: 16px;
+  color: rgb(156, 77, 119);
 }
+
 // homepage display parallax scrolling
 #welcome_page {
   letter-spacing: -15px;
@@ -146,6 +148,8 @@ img.post_main {
 }
 
 
+
+
 img:hover {
   filter: saturate(80%);
 }
@@ -154,6 +158,8 @@ p {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+
+
 
 a {
   text-decoration: none;
@@ -169,13 +175,30 @@ a {
 .city_link {
   color: rgba(42, 42, 42, 0.8);
   font-weight: bold;
+  font-size: 24px;
 }
 
-.city_link:hover, #article:hover, a:hover {
+.city_link:hover, a:hover, .post_link:hover {
   color: rgb(90, 17, 198);
   text-decoration: none;
   transform: scale(1.2);
 }
+
+.citypost {
+  font-size: 16px;
+  // color: rgb(156, 77, 119);
+
+}
+
+
+.citypost:hover {
+  font-weight: bold;
+}
+
+// #article:hover {
+//   color: red;
+//   font-weight: bold;
+// }
 
 #slideshow {
     position: relative;

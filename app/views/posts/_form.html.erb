@@ -6,6 +6,12 @@
   <%= f.label :content, 'Description :'%>
   <%= f.text_field :content, class: :field%>
   <br>
+  <%= f.label :city_id, 'City :' %>
+  <%= f.select :city_id, City.pluck(:name, :id), include_blank: true , class: :field%>
+  <br>
+  <%= f.label :address, 'Address :'%>
+  <%= f.text_field :address, class: :field%>
+  <br>
   <%= f.label :image, 'Image :'%>
   <%= f.cl_image_upload :image, class: :field%>
   <br>

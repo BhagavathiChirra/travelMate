@@ -44,6 +44,59 @@
 
 // show page for profile, ie User show page
 
+
+
+#posts_div:hover{
+  filter: saturate(120%);
+}
+//
+#txt_area_comments{
+  margin-left: 0px;
+  height: 50px;
+  width: 400px;
+}
+
+.delete_comment{
+  font-size: 16px;
+  color: rgb(156, 77, 119) !important;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.delete_comment:hover{
+  font-weight: bold !important;
+}
+
+#comments_div > p {
+  text-align: left;
+  // margin-left: 50px;
+}
+#comments_div > a {
+  text-align: right;
+  float: right;
+}
+.comment_div{
+  text-align: left;
+  border-style: ridge;
+
+}
+#comments_div{
+
+  // width: 800px;
+  // margin-left: 200px;
+  border-style: outset;
+  background-color: rgba(154, 154, 154, 0.3);
+  // padding-left: 20px;
+}
+.post_title{
+  display: inline;
+  // padding-right: 20px;
+}
+
+.commentbox {
+  margin-bottom: 0;
+}
+
 #articles {
   font-size: 16px;
   color: rgb(156, 77, 119);
@@ -186,19 +239,17 @@ a {
 
 .citypost {
   font-size: 16px;
-  // color: rgb(156, 77, 119);
+  color: rgb(156, 77, 119)!important;
 
 }
-
 
 .citypost:hover {
   font-weight: bold;
 }
 
-// #article:hover {
-//   color: red;
-//   font-weight: bold;
-// }
+#article:hover {
+  font-weight: bold!important;
+}
 
 #slideshow {
     position: relative;

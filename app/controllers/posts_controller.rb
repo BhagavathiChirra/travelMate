@@ -31,23 +31,14 @@ class PostsController < ApplicationController
     end
 
     def update
-      # if params[:file].present?
-      #   req = Cloudinary::Uploader.upload(params[:file])
-      #   @post.image = req["public_id"]
-      # end
+      if params[:file].present?
+        req = Cloudinary::Uploader.upload(params[:file])
+        @post.image = req["public_id"]
+      end
       @post.update post_params
       redirect_to post_path
 
     end
-
-    # def update_post
-    #   photo = Photo.new
-    #   photo.post_id = params[:id]
-    #   req = Cloudinary::Uploader.upload(params[:postimage])
-    #   photo.image = req['public_id']
-    #   photo.save
-    #   redirect_to post_path(get_post.id)
-    # end
 
     def destroy
       p = Post.find params[:id]

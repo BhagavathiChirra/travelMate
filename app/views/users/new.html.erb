@@ -1,4 +1,5 @@
-<h2>Create an Account</h2>
+
+
 
 <% if flash[:errors] %>
 <strong>Please correct the following errors:</strong>
@@ -8,6 +9,9 @@
   <% end %>
 </ol>
 <% end %>
+<h2>Create an Account</h2>
+<div class="content_box">
+
 <div id="login_div">
 <%= form_for @user do |f| %>
   <%= f.label :username %>
@@ -32,3 +36,4 @@
 
  <br>
 <% end %>
+</div>

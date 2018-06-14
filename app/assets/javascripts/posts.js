@@ -69,7 +69,7 @@ const displayComment = comment => {
   var $display_delete;
   if(userId === comment.user.id){
 
-    $display_delete = $(`<a class="delete_comment">Delete</a>`);
+    $display_delete = $(`<a class="delete_comment">Delete?</a>`);
     $display_delete.on('click', function(){
       const url_destroy = `http://localhost:3000/comments/${ comment.id }`;
       // console.log('url', url_destroy);
@@ -88,7 +88,7 @@ const displayComment = comment => {
     $display_delete = "";
   }
   var commentsContent = `<strong>Posted By:</strong> ${comment.user.username}<br><strong>Comment:</strong> ${comment.content}`;
-  $comment = $(`<div class="comment_div" id="comment_${ comment.id }">`).html(`<p>${ commentsContent }</p>`);
+  $comment = $(`<div class="comment_div" id="comment_${ comment.id }">`).html(`<p class="commentbox">${ commentsContent }</p>`);
   $comment.append($display_delete);
   $comment.appendTo('#comments_div');
 };

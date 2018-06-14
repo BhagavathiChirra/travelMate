@@ -9,11 +9,14 @@
   <% end %>
 
   <div class="content_box">
-  <% if @post.image.present? %>
-    <%= cl_image_tag @post.image, class: 'header_image' %>
-  <% else %>
-    <%= cl_image_tag "no_image.png" %>
-  <% end %>
+    <div id="slideshow">
+        <% @post.city.photos.each do |p| %>
+          <div class="slideshow_content_box">
+          <%= cl_image_tag p.image, {class: "header_image"} %>
+          </div>
+        <% end  %>
+    </div>
+
 <br> <br>
   <div class="container">
     <div class="row">

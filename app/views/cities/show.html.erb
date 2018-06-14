@@ -21,7 +21,7 @@
           <%= @city.bio%>
         </div>
         <br>
-        <div><h4>Blog Posts about this beautiful city:</h4>
+        <div><h4><strong>Blog Posts about this beautiful city:</strong></h4>
           <% @city.posts.each do |post| %>
             <li class='citypost'>
             <%= link_to post.title, post_path(post) %>

@@ -5,6 +5,7 @@
 <% else %>
 
 <h2>Log In</h2>
+<div class="content_box">
   <div id="login_div">
   <%= form_tag login_path, :id => 'login_form' do %>
     <strong> <%= flash[:error] %></strong>
@@ -20,6 +21,7 @@
 
     <%= submit_tag 'Login'%>
   <% end %>
+</div>
 </div>
 
 <% end %>

@@ -1,6 +1,6 @@
 <h1>Hello, My name is <%= @user.username %>!</h1>
 <h3>Welcome to my travel page</h3>
-<!-- <div id="articles" data-article="<%= @user.address %>">Loading news from your hometown now...</div> -->
+<!-- <div id="articles" data-article="<%= @user.address %>">Loading news from your hometown now...</div>  -->
 
 
 <div class="container">
@@ -8,9 +8,10 @@
     <div class="col-sm-6">
     <h4>Check out my blog posts</h4>
       <ul id="postdisplay">
-        <% @user.posts.each do |post| %>
+        <% @posts.each do |post| %>
           <li>
           <%= link_to post.title, post_path(post), class: 'post_link' %>
+          <%= post.liked_by.count %>
           </li>
         <% end %>
       </ul>

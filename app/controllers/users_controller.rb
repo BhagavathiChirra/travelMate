@@ -21,11 +21,8 @@ class UsersController < ApplicationController
   end
 
   def show
-
     @user = User.find params[:id]
-    # render json: {address: @user.address}
-    @address = @user.address
-    # raise 'hell'
+    @posts = @current_user.posts.sort{ |a,b| a.liked_by.count <=> b.liked_by.count }.reverse
   end
 
   def edit
@@ -33,6 +30,8 @@ class UsersController < ApplicationController
 
   def profile
     @user = @current_user
+    @posts = @user.posts.sort{ |a,b| a.liked_by.count <=> b.liked_by.count }.reverse
+    render :show
   end
 
   def update

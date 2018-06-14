@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   resources :cities
   resources :posts
   resources :users
+  get "/profile" => "users#profile"
   resources :photos
 end

@@ -1,5 +1,6 @@
 class CitiesController < ApplicationController
-  before_action :check_if_admin, only: [:edit, :destroy]
+  before_action :check_if_admin, only: [:edit, :destroy, :new]
+  before_action :check_if_logged_in, only: [:index, :show]
 
   def new
     @city = City.new

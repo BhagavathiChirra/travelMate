@@ -16,6 +16,8 @@
 }
 .delete_comment{
   font-size: 16px;
+  text-decoration: underline;
+  cursor: pointer;
 }
 #comments_div > p {
   text-align: left;
@@ -24,4 +26,20 @@
 #comments_div > a {
   text-align: right;
   float: right;
+}
+.comment_div{
+  text-align: left;
+  border-style: ridge;
+  // background-color: rgb(168, 222, 233);
+}
+#comments_div{
+  // background-color: rgb(168, 222, 233);
+  width: 800px;
+  margin-left: 200px;
+  border-style: outset;
+  padding-left: 20px;
+}
+.post_title{
+  display: inline;
+  padding-right: 20px;
 }

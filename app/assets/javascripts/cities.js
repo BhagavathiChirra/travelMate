@@ -7,11 +7,10 @@
 $( document ).ready(function() {
 
   // Only load from the news API on the users#show profile page
-  if( $('body.users.show').length ){
-    const country = $('#articles').data("article");
+  if( $('body.cities.show').length ){
+    const country = $('#citynamestrong').text();
     console.log(country);
     searchNews(country);
     SearchWeather(country);
   }
-
 });

@@ -9,10 +9,11 @@
   <% end %>
 </ol>
 <% end %>
-<h2>Create an Account</h2>
 <div class="content_box">
 
 <div id="login_div">
+<h2>Create an Account</h2>
+
 <%= form_for @user do |f| %>
   <%= f.label :username %>
   <%= f.text_field :username %>
@@ -31,7 +32,7 @@
   <%= f.text_field :address %>
   <br>
   <%= f.label :bio, "Biography" %>
-  <%= f.text_field :bio %>
+  <%= f.text_field :bio %> <br>
   <%= f.submit %>
 
  <br>

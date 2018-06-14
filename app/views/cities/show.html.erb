@@ -1,6 +1,7 @@
-<h1><strong><%= @city.name%></strong></h1>
+<h1><strong id="citynamestrong"><%= @city.name%></strong></h1>
 <%= link_to "Edit", edit_city_path(@city), class: "edit_link"%> |
 <%= link_to "Delete", city_path(@city), class: "edit_link", method: :delete %>
+
 
 <% if @city.photos.any? %>
   <div class="content_box">
@@ -28,10 +29,18 @@
             </li>
           <% end %>
         </div>
+        <br> <br>
+        <h4>Tourism news articles:</h4>
+        <div id="articles">Loading now...</div>
     </div>
 
     <div class="col-xs-6 col-sm-6">
+      <h4>Current weather:</h4>
+      <div id="weather">Loading now...</div>
+      <br><br>
+
       <div id="map"> </div>
+
     </div>
 
   </div>

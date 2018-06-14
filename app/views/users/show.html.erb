@@ -2,7 +2,7 @@
 <h3>Welcome to my travel page</h3>
 <!-- <div id="articles" data-article="<%= @user.address %>">Loading news from your hometown now...</div>  -->
 
-<%= link_to "Create New Post" , new_post_path %>
+<%= link_to "Create A Blog Post" , new_post_path %>
 <div class="container">
   <div class="row">
     <div class="col-sm-6">
@@ -18,10 +18,15 @@
       <%= cl_image_tag @user.image %>
     </div>
 
-
   <div class="col-sm-6">
    <h4>News from my hometown, <%= @user.address %></h4>
    <div id="articles" data-article="<%= @user.address %>">Loading now...</div>
+
+  <br><br>
+
+   <div><h4>Weather from my region:</h4>
+     <div id="weather" data-article="<%= @user.address %>">Loading now...</div>
+   </div>
    </div>
  </div>
 </div>

@@ -56,3 +56,59 @@ $(document).ready(function () {
   },  3000);
 
 });
+
+const searchNews = searchQuery => {
+  console.log(searchQuery);
+  const URL = 'https://content.guardianapis.com/search';
+  $.getJSON(URL, {
+    q: searchQuery,
+    section: 'travel',
+    'api-key': 'cde3aa09-a7bf-4d4c-a07e-14eddc349b5a'
+  })
+  .done(updateNews)
+  .fail()
+};
+
+const updateNews = data => {
+  console.log(data);
+  $('#articles').empty();
+  data.response.results.forEach(function(item){
+    // console.log(item.title);
+    $('<a>', {
+      href: item.webUrl,
+      html: item.webTitle,
+      target: '_blank',
+      id: 'articles'
+    }).appendTo('#articles');
+    $('<br>').appendTo('#articles');
+    // $('<p>').html(item.title).appendTo('#articles');
+  })
+};
+
+// searchNews(@user.address);
+
+
+const SearchWeather = searchQuery => {
+  console.log(searchQuery);
+  const URL = 'http://api.apixu.com/v1/current.json';
+  $.getJSON(URL, {
+    'key': '8d1b1b0ad2ae41cdbec103542181406',
+    q: searchQuery
+  })
+  .done(updateWeather)
+  .fail()
+};
+
+const updateWeather = data => {
+  console.log(data);
+  $('#weather').empty();
+  $('<img/>', {
+   src:"http:" + data.current.condition.icon,
+   // width:"16",
+   // height:"16",
+   id:"weather_icon"}).appendTo('#weather');
+  $('<p><strong>Condition:</strong> ' + data.current.condition.text + '</p>').appendTo('#weather');
+  $('<p><strong>Tempurature:</strong> ' + data.current.temp_c + ' celsius</p>').appendTo('#weather');
+  $('<p><strong>Wind:</strong> ' + data.current.wind_kph + ' km/h</p>').appendTo('#weather');
+   // $('<p>').html(item.title).appendTo('#articles');
+};

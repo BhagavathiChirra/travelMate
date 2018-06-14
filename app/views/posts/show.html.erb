@@ -1,4 +1,6 @@
-  <h1 class="post_title"><%= @post.title%></h1><strong><span>By:&nbsp;&nbsp;</span></strong><%= link_to @post.user.username, user_path(@post.user) %>&nbsp;&nbsp;
+  <h1 class="post_title"><%= @post.title%></h1><strong>
+    <br>
+    <span>By:&nbsp;&nbsp;</span></strong><%= link_to @post.user.username, user_path(@post.user) %>&nbsp;&nbsp;
   <i id="btn_like" class="fa fa-thumbs-<%=  @current_user.liked_posts.include?( @post ) ? 'down' : 'up' %>"></i>
 
     <span id="span_likes"><%= @post.liked_by.count %> </span>

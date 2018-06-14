@@ -7,7 +7,7 @@
   <%= f.text_field :content, class: :field%>
   <br>
   <%= f.label :city_id, 'City :' %>
-  <%= f.select :city_id, City.pluck(:name, :id), include_blank: true , class: :field%>
+  <%= f.select :city_id, City.pluck(:name, :id), include_blank: true , class: :field, selected: params[:city_id] %>
   <br>
   <%= f.label :address, 'Address :'%>
   <%= f.text_field :address, class: :field%>

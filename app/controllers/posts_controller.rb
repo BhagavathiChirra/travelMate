@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 
     def create
       post = Post.create post_params
+      post.user = @current_user
       if post.persisted?
         if params[:file].present?
           req = Cloudinary::Uploader.upload(params[:file])
@@ -68,6 +69,6 @@ class PostsController < ApplicationController
 
     private
     def post_params
-      params.require(:post).permit(:title, :image, :content)
+      params.require(:post).permit(:title, :image, :content, :city_id, :address)
     end
 end

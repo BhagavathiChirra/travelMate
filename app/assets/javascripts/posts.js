@@ -26,9 +26,6 @@ $( document ).ready(function() {
 
 
     $('#btn_like').on('click', function(){
-      // console.log("btn_like  click");
-      console.log($(this));
-
       $.get({
         url: `http://localhost:3000/posts/${postId}/like`
       })

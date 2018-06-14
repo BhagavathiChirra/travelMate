@@ -14,7 +14,7 @@
         <% @posts.each do |post| %>
           <li>
           <%= link_to post.title, post_path(post), class: 'post_link' %>
-          <%= post.liked_by.count %> likes.
+          <%= pluralize post.liked_by.count, 'like' %>.
           </li>
         <% end %>
       </ul>

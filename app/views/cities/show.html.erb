@@ -56,7 +56,7 @@
         map: map,
         title: posts[i].name
       });
-      var contentString = '<div id="content">'+ `<a href="http://localhost:3000/posts/${posts[i].id}">${posts[i].name}</a>` +'</div>';
+      var contentString = '<div id="content">'+ `<a href="/posts/${posts[i].id}">${posts[i].name}</a>` +'</div>';
       var infowindow = new google.maps.InfoWindow();
       google.maps.event.addListener(marker, 'click', function(contentString){
       return function(){

@@ -1,3 +1,32 @@
 // Place all the styles related to the Cities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1.city_heading {
+  display: inline;
+}
+
+.button_to {
+  display: inline;
+}
+
+#city_title_container {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.btn.city_post {
+  position: absolute;
+  right: 0;
+  margin-top: 4px;
+}
+.btn.city_delete{
+  margin-bottom: 10px;
+  margin-left: 30px;
+}
+.btn.city_edit{
+  margin-bottom: 10px;
+  margin-left: 100px;
+}

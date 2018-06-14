@@ -2,11 +2,10 @@
     <br>
     <span>By:&nbsp;&nbsp;</span></strong><%= link_to @post.user.username, user_path(@post.user) %>&nbsp;&nbsp;
   <i id="btn_like" class="fa fa-thumbs-<%=  @current_user.liked_posts.include?( @post ) ? 'down' : 'up' %>"></i>
-
     <span id="span_likes"><%= @post.liked_by.count %> </span>
   <% if @current_user.present? && @post.user == @current_user %>
-  <%= link_to "Edit", edit_post_path(@post), class: "edit_link"%> |
-  <%= link_to "Delete", post_path(@post), class: "edit_link", method: :delete%>
+  <%= button_to "Edit", edit_post_path(@post), class: "btn btn-primary"%>
+  <%= button_to "Delete", post_path(@post), class: "btn btn-danger", method: :delete%>
   <% end %>
 
   <div class="content_box">
@@ -29,7 +28,7 @@
           <div>
               Comments:
               <%= text_area_tag id="txt_area_comments" %>
-              <%= submit_tag 'Post', id: :btn_comment%>
+              <%= submit_tag 'Post', id: :btn_comment, class: "btn btn-primary"%>
           </div><br>
           <div id="comments_div">
 

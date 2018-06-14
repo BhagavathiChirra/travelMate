@@ -1,19 +1,35 @@
-<h1><strong id="citynamestrong"><%= @city.name%></strong></h1>
-<%= link_to "Edit", edit_city_path(@city), class: "edit_link"%> |
-<%= link_to "Delete", city_path(@city), class: "edit_link", method: :delete %>
 
+<div class="content_box">
+  <div id="city_title_container">
+      <h1 class="city_heading"><strong id="citynamestrong"><%= @city.name%></strong></h1>
+ <% if @current_user.present? %>
+         <%= button_to "Edit", edit_city_path(@city), class: "btn btn-primary city_edit"%>
+       <%= button_to "Delete", city_path(@city), class: "btn btn-danger city_delete", method: :delete %>
+     <% end %>
+    <%= button_to 'Add Post',
+       new_post_path,
+        method: :get,
+         params: {city_id: @city.id},
+        class: 'btn btn-primary city_post'
+      %>
+</div>
 
 <% if @city.photos.any? %>
-  <div class="content_box">
     <div id="slideshow">
-      <% @city.photos.each do |p| %>
-        <div class="slideshow_content_box">
+        <% @city.photos.each do |p| %>
+          <div class="slideshow_content_box">
           <%= cl_image_tag p.image, {class: "header_image"} %>
-        </div>
-      <% end  %>
+          </div>
+        <% end  %>
     </div>
-<% end %>
+  <% end %>
+
+
+
+
+
 <br><br>
+
 
 <div class="container">
   <div class="row">
@@ -30,12 +46,12 @@
           <% end %>
         </div>
         <br> <br>
-        <h4>Tourism news articles:</h4>
+        <h4><strong>Tourism news articles:</strong></h4>
         <div id="articles">Loading now...</div>
     </div>
 
     <div class="col-xs-6 col-sm-6">
-      <h4>Current weather:</h4>
+      <h4><strong>Current weather:</strong></h4>
       <div id="weather">Loading now...</div>
       <br><br>
 

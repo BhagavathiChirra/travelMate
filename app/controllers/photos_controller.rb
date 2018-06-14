@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+  before_action :get_photo, only: %i[show]
   def new
   end
 

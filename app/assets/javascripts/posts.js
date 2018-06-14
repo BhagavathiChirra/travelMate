@@ -69,7 +69,7 @@ const displayComment = comment => {
   else {
     $display_delete = "";
   }
-  var commentsContent = `Posted By: ${comment.user.username}<br>Comment: ${comment.content}`;
+  var commentsContent = `<strong>Posted By:</strong> ${comment.user.username}<br><strong>Comment:</strong> ${comment.content}`;
 
   $comment = $(`<div id="comment_${ comment.id }">`).html(`<p>${ commentsContent }</p>`);
   $comment.append($display_delete);

@@ -1,9 +1,19 @@
-  <h1><%= @post.title%></h1>
+  <h1 class="post_title"><%= @post.title%></h1>
+  <i id="btn_like" class="fa fa-thumbs-<%=  @current_user.liked_posts.include?( @post ) ? 'down' : 'up' %>"></i>
+
+    <span id="span_likes"><%= @post.liked_by.count %> </span>
   <% if @current_user.present? && @post.user == @current_user %>
   <%= link_to "Edit", edit_post_path(@post), class: "edit_link"%> |
   <%= link_to "Delete", post_path(@post), class: "edit_link", method: :delete%>
   <% end %>
-  <%= submit_tag 'Like', id: :btn_like %>
+
+  <!-- <% @post.liked_by.each do | u |%>
+    <% if u.username == @current_user.username %>
+      <%= submit_tag 'Like', id: :btn_like %>
+    <% end %>
+  <% end %> -->
+
+
   <div class="content_box">
   <% if @post.image.present? %>
     <%= cl_image_tag @post.image, class: 'header_image' %>

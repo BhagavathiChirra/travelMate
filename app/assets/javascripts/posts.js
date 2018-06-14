@@ -26,16 +26,19 @@ $( document ).ready(function() {
 
 
     $('#btn_like').on('click', function(){
-      console.log("btn_like  click");
+      // console.log("btn_like  click");
+      console.log($(this));
+
       $.get({
         url: `http://localhost:3000/posts/${postId}/like`
       })
       .done(function(data){
-        // console.log(data);
         if(data.added){
-          // $(btn_like).addClass()
+          $("#btn_like").removeClass().addClass("fa fa-thumbs-down");
+          $("#span_likes").text(data.likes);
         }else if(data.removed){
-
+          $("#btn_like").removeClass().addClass("fa fa-thumbs-up");
+          $("#span_likes").text(data.likes);
         }
       })
       .fail(errorHandler);

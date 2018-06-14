@@ -460,3 +460,12 @@ body {
     }
   }
 }
+.fa {
+    font-size: 30px !important;
+    cursor: pointer;
+    user-select: none;
+}
+
+.fa:hover {
+  color: darkblue;
+}

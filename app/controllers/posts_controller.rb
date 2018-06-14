@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :check_if_logged_in, except: [:like]
   before_action :get_post, only:[:show, :edit, :update]
     def new
       @post = Post.new
@@ -51,12 +52,12 @@ class PostsController < ApplicationController
       if @current_user.liked_posts.include?( p )
         # already in liked posts list, so remove
          @current_user.liked_posts.destroy( p )
-         render json: { removed: true }
+         render json: { removed: true, likes: p.liked_by.count }
 
       else
         # not in liked posts yet, so add
         @current_user.liked_posts << p
-        render json: { added: true }
+        render json: { added: true , likes: p.liked_by.count }
       end
     end
 

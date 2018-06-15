@@ -8,7 +8,17 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6">
-    <h4>Check out my blog posts</h4>
+    <div>
+      <h4>My Latest Blog Posts</h4>
+      <ul>
+        <% @latest.each do |post| %>
+          <li>
+          <%= link_to post.title, post_path(post), class: 'post_link' %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <h4>All Blog Posts</h4>
       <ul id="postdisplay">
         <% @posts.each do |post| %>
           <li>

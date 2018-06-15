@@ -437,17 +437,17 @@ body {
       &.anim {
         left: 0;
         bottom: 0;
-        animation: menu-anim 0.5s 1 ease-out normal;
+        animation: menu-anim 0.2s 1 ease-out normal;
         width: 25%;
-        transition: all 0.5s ease;
+        // transition: all 0.5s ease;
 
-        &.reverse-anim {
-          left: 0;
-          bottom: 0;
-          animation: menu-anim 1.5s 1 ease-out reverse;
-          width: 25%;
-          transition: all 0.5s ease;
-        }
+        // &.reverse-anim {
+        //   left: 0;
+        //   bottom: 0;
+        //   animation: rmenu-anim 0.5s 1 ease-out reverse;
+        //   width: 25%;
+        //   transition: all 0.5s ease;
+        // }
       }
 
       ul {
@@ -509,22 +509,10 @@ body {
     @-webkit-keyframes menu-anim {
 
       0% {
-        left: 0;
-        bottom: -99%;
-        width: 100%;
+        left: -25%;
+        width: 25%;
       }
 
-      33% {
-        left: -99.5%;
-        bottom: -99%;
-        width: 100%;
-      }
-
-      66% {
-        left: -99.5%;
-        bottom: 0;
-        width: 100%;
-      }
 
       100% {
         bottom: 0;
@@ -532,8 +520,39 @@ body {
         width: 25%;
       }
     }
+
+
   }
 }
+
+@-webkit-keyframes rmenu-anim {
+
+  0% {
+    left: 0;
+    bottom: -99%;
+    width: 100%;
+  }
+
+  33% {
+    left: -99.5%;
+    bottom: -99%;
+    width: 100%;
+  }
+
+  66% {
+    left: -99.5%;
+    bottom: 0;
+    width: 100%;
+  }
+
+  100% {
+    bottom: 0;
+    left: 0;
+    width: 25%;
+  }
+}
+
+
 .fa {
     font-size: 30px !important;
     cursor: pointer;

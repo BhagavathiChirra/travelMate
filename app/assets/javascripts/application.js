@@ -26,7 +26,7 @@ $(document).ready(function () {
 
     if(menu_visible){
       console.log('hide');
-      $('.anim').toggleClass('reverse-animation');
+      // $('.anim').toggleClass('reverse-animation');
       $('.overlay').toggleClass('anim');
       $('.content_body').toggleClass('small_content');
     } else {
@@ -67,7 +67,7 @@ const updateNews = data => {
   console.log(data);
   $('#articles').empty();
   data.response.results.forEach(function(item){
-    
+
     $('<a>', {
       href: item.webUrl,
       html: item.webTitle,
@@ -82,7 +82,7 @@ const updateNews = data => {
 
 const SearchWeather = searchQuery => {
   console.log(searchQuery);
-  const URL = 'http://api.apixu.com/v1/current.json';
+  const URL = 'https://api.apixu.com/v1/current.json';
   $.getJSON(URL, {
     'key': '8d1b1b0ad2ae41cdbec103542181406',
     q: searchQuery

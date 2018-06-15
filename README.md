@@ -1,6 +1,10 @@
-# TRAVEL climate
+# TRAVEL MATE.
 
 This is our first group project for Web Dev Immersive at General Assembly. We are building a web application from the ground up.
+
+Our site gives great holiday plans for travellers, from real travellers.
+
+You can sign up
 
 
 ## Sign up for this fun site now.

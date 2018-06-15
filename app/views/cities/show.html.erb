@@ -65,6 +65,32 @@
 </div>
 
 <script>
+// const SearchWeather = searchQuery => {
+//   console.log(searchQuery);
+//   const URL = 'http://api.apixu.com/v1/current.json';
+//   $.getJSON(URL, {
+//     'key': "<%= Rails.application.secrets.apxu_api_key %>",
+//     q: searchQuery
+//   })
+//   .done(updateWeather)
+//   .fail()
+// };
+//
+// const updateWeather = data => {
+//   console.log(data);
+//   $('#weather').empty();
+//   $('<img/>', {
+//    src:"http:" + data.current.condition.icon,
+//    // width:"16",
+//    // height:"16",
+//    id:"weather_icon"}).appendTo('#weather');
+//   $('<p><strong>Condition:</strong> ' + data.current.condition.text + '</p>').appendTo('#weather');
+//   $('<p><strong>Tempurature:</strong> ' + data.current.temp_c + ' celsius</p>').appendTo('#weather');
+//   $('<p><strong>Wind:</strong> ' + data.current.wind_kph + ' km/h</p>').appendTo('#weather');
+//    // $('<p>').html(item.title).appendTo('#articles');
+// };
+
+
   function initMap() {
     var bounds = new google.maps.LatLngBounds();
     var infowindow = new google.maps.InfoWindow();

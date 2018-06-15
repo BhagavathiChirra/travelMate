@@ -1,0 +1,6 @@
+development:
+  apxu_api_key: Rails.application.secrets.apxu_api_key
+production:
+  apxu_api_key: Rails.application.secrets.apxu_api_key
+production:
+  apxu_api_key: Rails.application.secrets.apxu_api_key

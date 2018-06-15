@@ -17,14 +17,14 @@
           </li>
         <% end %>
       </ul>
-      <%= cl_image_tag @user.image %>
+      <%= cl_image_tag @user.image, class: 'photos' %>
     </div>
 
   <div class="col-sm-6">
    <h4>News from my hometown, <%= @user.address %></h4>
    <div id="articles" data-article="<%= @user.address %>">Loading now...</div>
 
-  <br><br>
+  <br>
 
    <div><h4>Weather from my region:</h4>
      <div id="weather" data-article="<%= @user.address %>">Loading now...</div>

@@ -1,6 +1,7 @@
 class CitiesController < ApplicationController
   before_action :check_if_admin, only: [:edit, :destroy, :new]
   before_action :check_if_logged_in, only: [:index, :show]
+  skip_before_action :verify_authenticity_token
 
   def new
     @city = City.new

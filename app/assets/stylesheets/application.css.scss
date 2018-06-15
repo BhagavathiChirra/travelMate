@@ -118,6 +118,10 @@
   font-size: 16px;
   color: rgb(156, 77, 119);
 }
+a#articles:hover {
+  font-weight: bold!important;
+  color: rgb(90, 17, 198)!important;
+}
 
 #postdisplay {
   font-size: 16px;
@@ -251,6 +255,7 @@ a {
 .city_link:hover, a:hover, .post_link:hover {
   color: rgb(90, 17, 198);
   text-decoration: none;
+  font-weight: bold!important;
   transform: scale(1.2);
 }
 
@@ -264,9 +269,7 @@ a {
   font-weight: bold;
 }
 
-#article:hover {
-  font-weight: bold!important;
-}
+
 
 #slideshow {
     position: relative;

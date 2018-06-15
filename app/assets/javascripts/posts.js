@@ -87,7 +87,13 @@ const displayComment = comment => {
   else {
     $display_delete = "";
   }
-  var commentsContent = `<strong>Posted By:</strong><img src="${comment.user.image}" class="comment_user_image" /> ${comment.user.username}<br><strong>Comment:</strong> ${comment.content}`;
+  var commentsContent = `<strong>Posted By:</strong>
+  <img src="${comment.user.image}" class="comment_user_image" />
+  <a href="/users/${comment.user.id}">
+  <strong id="comment_name">${comment.user.username}</strong>
+  <br>
+  <strong></a>Comment:</strong> ${comment.content}`;
+  console.log(`${comment.user.username}`);
   $comment = $(`<div class="comment_div" id="comment_${ comment.id }">`).html(`<p class="commentbox">${ commentsContent }</p>`);
   $comment.append($display_delete);
   $comment.appendTo('#comments_div');

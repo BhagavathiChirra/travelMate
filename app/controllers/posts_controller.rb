@@ -36,7 +36,7 @@ class PostsController < ApplicationController
         req = Cloudinary::Uploader.upload(params[:file])
         @post.image = req["public_id"]
       end
-      @post.update post_params      
+      @post.update post_params
       redirect_to post_path
 
     end

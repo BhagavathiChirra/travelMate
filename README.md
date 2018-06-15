@@ -4,7 +4,11 @@ This is our first group project for Web Dev Immersive at General Assembly. We ar
 
 Our site gives great holiday plans for travellers, from real travellers.
 
-You can sign up
+You can sign up and see blog posts from other users for different cities. At the moment, only admin can add/edit a city (for security reason, to prevent users from deleting our database).
+
+As an user, you can write your own blog post, and delete it if you wish. You can give your favourite blog posts a thumb up :) You can also leave comments, and remove them.
+
+Blog posts and cities come with a stunning slideshow, weather forecast and travel news from said cities.
 
 
 ## Sign up for this fun site now.

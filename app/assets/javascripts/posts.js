@@ -13,7 +13,7 @@ $( document ).ready(function() {
     $('#btn_comment').on('click', function(){
       const content = $('#txt_area_comments').val();
       $.post({
-        url: "https://localhost:3000/comments",
+        url: "/comments",
         data: { content:  content, post_id: postId } ,
       })
       .done(function (data) {
@@ -27,7 +27,7 @@ $( document ).ready(function() {
 
     $('#btn_like').on('click', function(){
       $.get({
-        url: `https://localhost:3000/posts/${postId}/like`
+        url: `/posts/${postId}/like`
       })
       .done(function(data){
         if(data.added){
@@ -46,7 +46,7 @@ $( document ).ready(function() {
 });
 // Making JSON call to get the comments belongs to that particular Post
 const getCommentsJson = function(){
-  const URL = `https://localhost:3000/comments/${postId}`;
+  const URL = `/comments/${postId}`;
   $.getJSON(URL,{
     format: 'json',
     nojsoncallback: 1
@@ -71,7 +71,7 @@ const displayComment = comment => {
 
     $display_delete = $(`<a class="delete_comment">Delete?</a>`);
     $display_delete.on('click', function(){
-      const url_destroy = `https://localhost:3000/comments/${ comment.id }`;
+      const url_destroy = `/comments/${ comment.id }`;
 
       $.ajax({
         url: url_destroy,

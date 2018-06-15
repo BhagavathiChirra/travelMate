@@ -72,7 +72,7 @@ const displayComment = comment => {
     $display_delete = $(`<a class="delete_comment">Delete?</a>`);
     $display_delete.on('click', function(){
       const url_destroy = `http://localhost:3000/comments/${ comment.id }`;
-      // console.log('url', url_destroy);
+      
       $.ajax({
         url: url_destroy,
         type: 'DELETE'

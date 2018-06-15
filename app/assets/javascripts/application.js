@@ -36,13 +36,7 @@ $(document).ready(function () {
     }
     menu_visible = !menu_visible;
   });
-  //     $('.overlay').toggleClass('anim');
-  //     $('.content_body').toggleClass('small_content');
-  // });
-  //
-  // $('.animation').click(function(){
-  //     $('.anim').toggleClass('reverse-animation');
-  // })
+
 
   $("#slideshow > div:gt(0)").hide();
 
@@ -73,7 +67,7 @@ const updateNews = data => {
   console.log(data);
   $('#articles').empty();
   data.response.results.forEach(function(item){
-    // console.log(item.title);
+    
     $('<a>', {
       href: item.webUrl,
       html: item.webTitle,
@@ -81,11 +75,9 @@ const updateNews = data => {
       id: 'articles'
     }).appendTo('#articles');
     $('<br>').appendTo('#articles');
-    // $('<p>').html(item.title).appendTo('#articles');
   })
 };
 
-// searchNews(@user.address);
 
 
 const SearchWeather = searchQuery => {
@@ -104,11 +96,9 @@ const updateWeather = data => {
   $('#weather').empty();
   $('<img/>', {
    src:"http:" + data.current.condition.icon,
-   // width:"16",
-   // height:"16",
    id:"weather_icon"}).appendTo('#weather');
   $('<p><strong>Condition:</strong> ' + data.current.condition.text + '</p>').appendTo('#weather');
-  $('<p><strong>Tempurature:</strong> ' + data.current.temp_c + ' celsius</p>').appendTo('#weather');
+  $('<p><strong>Temperature:</strong> ' + data.current.temp_c + ' celsius</p>').appendTo('#weather');
   $('<p><strong>Wind:</strong> ' + data.current.wind_kph + ' km/h</p>').appendTo('#weather');
-   // $('<p>').html(item.title).appendTo('#articles');
+
 };

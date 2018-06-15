@@ -1,9 +1,9 @@
 <h1>Hello, My name is <%= @user.username %>!</h1>
 <h3>Welcome to my travel page</h3>
 
-<%= button_to "Add Post" , new_post_path, class: "btn btn-primary" %>
+<%= button_to "Add Post" , new_post_path, class: 'btn btn-primary', method: :get%>
 <% if @current_user.admin? %>
-  <%= button_to 'Add City', new_city_path, class: "btn btn-primary" %>
+  <%= button_to 'Add City', new_city_path, class: 'btn btn-primary', method: :get %>
 <% end %>
 <div class="container">
   <div class="row">

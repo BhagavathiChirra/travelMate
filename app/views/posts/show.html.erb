@@ -4,8 +4,8 @@
   <i id="btn_like" class="fa fa-thumbs-<%=  @current_user.liked_posts.include?( @post ) ? 'down' : 'up' %>"></i>
     <span id="span_likes"><%= @post.liked_by.count %> </span>
   <% if @current_user.present? && @post.user == @current_user %>
-  <%= button_to "Edit", edit_post_path(@post), class: "btn btn-primary"%>
-  <%= button_to "Delete", post_path(@post), class: "btn btn-danger", method: :delete%>
+  <%= link_to "Edit", edit_post_path(@post) %> |
+  <%= link_to "Delete", post_path(@post), method: :delete %>
   <% end %>
 
   <div class="content_box">

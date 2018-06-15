@@ -2,10 +2,10 @@ $( document ).ready(function() {
 
   if( $('body.posts.show').length ){
 
-    $('form').submit(function(event){
-      event.preventDefault();
-      return false;
-    });
+    // $('form').submit(function(event){
+    //   event.preventDefault();
+    //   return false;
+    // });
     // This gets called when the page loads
     getCommentsJson();
     // getLikes();

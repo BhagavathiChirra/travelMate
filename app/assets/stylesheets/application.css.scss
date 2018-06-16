@@ -439,15 +439,6 @@ body {
         bottom: 0;
         animation: menu-anim 0.2s 1 ease-out normal;
         width: 25%;
-        // transition: all 0.5s ease;
-
-        // &.reverse-anim {
-        //   left: 0;
-        //   bottom: 0;
-        //   animation: rmenu-anim 0.5s 1 ease-out reverse;
-        //   width: 25%;
-        //   transition: all 0.5s ease;
-        // }
       }
 
       ul {
@@ -525,32 +516,6 @@ body {
   }
 }
 
-@-webkit-keyframes rmenu-anim {
-
-  0% {
-    left: 0;
-    bottom: -99%;
-    width: 100%;
-  }
-
-  33% {
-    left: -99.5%;
-    bottom: -99%;
-    width: 100%;
-  }
-
-  66% {
-    left: -99.5%;
-    bottom: 0;
-    width: 100%;
-  }
-
-  100% {
-    bottom: 0;
-    left: 0;
-    width: 25%;
-  }
-}
 
 
 .fa {

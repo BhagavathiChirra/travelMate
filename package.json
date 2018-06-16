@@ -1,5 +1,7 @@
 {
   "name": "travel-mate",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "learnyounode": "^3.5.10"
+  }
 }

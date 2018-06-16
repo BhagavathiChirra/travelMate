@@ -10,6 +10,8 @@ As an user, you can write your own blog post, and delete it if you wish. You can
 
 Blog posts and cities come with a stunning slideshow, weather forecast and travel news from said cities.
 
+The cities also come with Google map displaying all blog posts made about them. When you click on the marker, it will take you to that blog post.
+
 
 ## Sign up for this fun site now.
 
@@ -95,6 +97,7 @@ We were torn between doing a food blog/review site like Zomato and a Travel site
 
 - CSS is really cool, but it could be a tad annoying to deal with.
 
+- When logging in as admin, I could add a new city. The problem that we currently have is that, the new city added will not have any slideshow like the other cities that we created through our seeds database.
 
 ## Wish list:
 

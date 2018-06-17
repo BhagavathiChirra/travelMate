@@ -281,7 +281,7 @@ img.photos {
   justify-content: center;
   align-items: center;
   transform: translateZ(-1px) scale(2);
-  background: url('http://www.victorianielsens.se/wp-content/uploads/2017/10/travel.jpg');
+  background: url('../img/travel.jpg');
   background-size: cover;
   background-color: rgb(250,228, 216);
 }
@@ -351,7 +351,7 @@ body {
   position: relative;
   font-family: 'Open Sans', sans-serif;
   background-attachment: fixed;
-  background-image: url('https://www.theriversouth.org/wp-content/uploads/2016/01/Light-Grey-Background-Tumblr-8.jpg');
+  background-image: url('../img/Light-Grey-Background-Tumblr-8.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

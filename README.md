@@ -15,7 +15,7 @@ The cities also come with Google map displaying all blog posts made about them. 
 
 ## Sign up for this fun site now.
 
-Start your travel journey right here: [Travel Mate ](https://project2-travelmate.herokuapp.com/welcome.html)
+Start your travel journey right here: [Travel Mate ](https://project2-travelmate.herokuapp.com/)
 
 ## Ruby version:
 

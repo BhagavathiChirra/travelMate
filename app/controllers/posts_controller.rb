@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :check_if_logged_in, except: [:like]
+  before_action :check_if_logged_in, except: [:like, :index, :show]
   before_action :get_post, only:[:show, :edit, :update]
     def new
       @post = Post.new

@@ -8,17 +8,17 @@ Our site gives great holiday plans for travellers, from real travellers.
 
 You can sign up and see blog posts from other users for different cities. At the moment, only admin can add/edit a city (for security reason, to prevent users from deleting our database).
 
-![List of Cities](./assets/images/Cities.png)
+![List of Cities](https://github.com/eggyducktective/travelMate/blob/master/app/assets/images/Cities.jpg)
 
 As an user, you can write your own blog post, and delete it if you wish. You can give your favourite blog posts a thumb up :) You can also leave comments, and remove them.
 
-![User page](./assets/images/User.png)
+![User page](https://github.com/eggyducktective/travelMate/blob/master/app/assets/images/User.jpg)
 
 Blog posts and cities come with a stunning slideshow, weather forecast and travel news from said cities.
 
 The cities also come with Google map displaying all blog posts made about them. When you click on the marker, it will take you to that blog post.
 
-![Paris](./assets/images/Paris.png)
+![Paris](https://github.com/eggyducktective/travelMate/blob/master/app/assets/images/Paris.jpg)
 
 ## Sign up for this fun site now.
 

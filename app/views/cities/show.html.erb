@@ -3,7 +3,7 @@
   <div id="city_title_container">
       <h1 class="city_heading"><strong id="citynamestrong"><%= @city.name%></strong></h1>
  <% if @current_user.present? && @current_user.admin%>
-         <%= link_to "Edit", edit_city_path(@city)%> | 
+         <%= link_to "Edit", edit_city_path(@city)%> |
        <%= link_to "Delete", city_path(@city), method: :delete %>
      <% end %>
     <%= button_to 'Add Post',
@@ -18,7 +18,7 @@
     <div id="slideshow">
         <% @city.photos.each do |p| %>
           <div class="slideshow_content_box">
-          <%= cl_image_tag p.image, {class: "header_image"} %>
+          <%= image_tag p.image, {class: "header_image"} %>
           </div>
         <% end  %>
     </div>

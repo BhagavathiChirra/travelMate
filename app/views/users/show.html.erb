@@ -1,7 +1,8 @@
 <h1>Hello, My name is <%= @user.username %>!</h1>
 <h3>Welcome to my travel page</h3>
-
+<% if @user.id == @current_user.id %>
 <%= button_to "Add Post" , new_post_path, class: 'btn btn-primary', method: :get%>
+<% end %>
 <% if @current_user.admin? %>
   <%= button_to 'Add City', new_city_path, class: 'btn btn-primary', method: :get %>
 <% end %>
@@ -18,6 +19,7 @@
         <% end %>
       </ul>
     </div>
+
     <h4>All Blog Posts</h4>
       <ul id="postdisplay">
         <% @posts.each do |post| %>

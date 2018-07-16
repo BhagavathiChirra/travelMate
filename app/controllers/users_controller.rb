@@ -21,9 +21,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    @session_user = session[:user_id]
     @user = User.find params[:id]
     @posts = @current_user.posts.sort{ |a,b| a.liked_by.count <=> b.liked_by.count }.reverse
     @latest = @current_user.posts.order("created_at desc").limit(3)
+    # binding.pry
   end
 
   def edit
